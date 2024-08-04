@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: ID
+        type: number
+    secret_number:
+        label: 'Секретное число'
+        type: number
+    total_cells:
+        label: 'Количество клеток'
+        type: number
+    is_active:
+        label: 'Активна игра?'
+        type: switch
+    created_at:
+        label: Создана
+        type: datetime
+    updated_at:
+        label: Обновлена
+        type: datetime

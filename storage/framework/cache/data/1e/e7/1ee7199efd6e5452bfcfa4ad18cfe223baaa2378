@@ -1,0 +1,17 @@
+1722860645a:1:{s:13:"modalPass.htm";a:5:{s:8:"fileName";s:13:"modalPass.htm";s:7:"content";s:563:"<div class="modal-content" id="modal-forgotPass">
+        <button class="closeModal-btn"></button>
+        <h2 class="modal-content__title">Password <br> recovery</h2>
+        <form class="modal-form form-forgotPass">
+            <input class="modal-form__input" type="email" id="input1" placeholder="Your mail">
+            <p class="form-forgotPass__text">We will send further instructions to your email to reset your password.</p>
+            <button class="modal-form__btn" data-fancybox data-src="#modal-mail">Send</button>
+        </form>
+    </div>";s:5:"mtime";i:1722624779;s:6:"markup";s:563:"<div class="modal-content" id="modal-forgotPass">
+        <button class="closeModal-btn"></button>
+        <h2 class="modal-content__title">Password <br> recovery</h2>
+        <form class="modal-form form-forgotPass">
+            <input class="modal-form__input" type="email" id="input1" placeholder="Your mail">
+            <p class="form-forgotPass__text">We will send further instructions to your email to reset your password.</p>
+            <button class="modal-form__btn" data-fancybox data-src="#modal-mail">Send</button>
+        </form>
+    </div>";s:4:"code";N;}}

@@ -1,0 +1,12 @@
+list: $/dmitry/game/models/game/columns.yaml
+modelClass: Dmitry\Game\Models\Game
+title: GamesController
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dmitry/game/gamescontroller/update/:id'

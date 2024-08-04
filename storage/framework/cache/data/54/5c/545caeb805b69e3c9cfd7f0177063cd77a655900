@@ -1,0 +1,1 @@
+1722825501a:1:{s:5:"users";a:3:{s:5:"label";s:36:"backend::lang.user.group.users_count";s:4:"list";s:42:"~/modules/backend/models/user/columns.yaml";s:4:"view";a:1:{s:14:"toolbarButtons";s:10:"add|remove";}}}

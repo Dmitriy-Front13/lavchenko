@@ -1,0 +1,38 @@
+[account]
+isDefault = 0
+
+[session]
+security = "all"
+checkToken = 0
+
+[registration]
+
+[authentication]
+rememberMe = "ask"
+twoFactorAuth = 0
+recoverPassword = 0
+
+[resetPassword]
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="{{ 'assets/css/style.css'| theme }}">
+    <title>MI77ON</title>
+</head>
+<body>
+{% page %}
+<!-- Scripts -->
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+</html>

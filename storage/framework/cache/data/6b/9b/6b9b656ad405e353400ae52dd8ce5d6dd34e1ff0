@@ -1,0 +1,59 @@
+1722860645a:1:{s:11:"default.htm";a:10:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1119:"[account]
+isDefault = 0
+
+[session]
+security = "all"
+checkToken = 0
+
+[registration]
+
+[authentication]
+rememberMe = "ask"
+twoFactorAuth = 0
+recoverPassword = 0
+
+[resetPassword]
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="{{ 'assets/css/style.css'| theme }}">
+    <title>MI77ON</title>
+</head>
+<body>
+{% page %}
+<!-- Scripts -->
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+</html>";s:5:"mtime";i:1722721331;s:6:"markup";s:925:"<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="{{ 'assets/css/style.css'| theme }}">
+    <title>MI77ON</title>
+</head>
+<body>
+{% page %}
+<!-- Scripts -->
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+</html>";s:4:"code";N;s:7:"account";a:1:{s:9:"isDefault";s:1:"0";}s:7:"session";a:2:{s:8:"security";s:3:"all";s:10:"checkToken";s:1:"0";}s:12:"registration";a:0:{}s:14:"authentication";a:3:{s:10:"rememberMe";s:3:"ask";s:13:"twoFactorAuth";s:1:"0";s:15:"recoverPassword";s:1:"0";}s:13:"resetPassword";a:0:{}}}

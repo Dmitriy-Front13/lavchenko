@@ -1,0 +1,8 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table dmitry_game_'
+    - builder_table_create_dmitry_game_.php
+v1.0.3:
+    - 'Created table dmitry_game_number'
+    - builder_table_create_dmitry_game_number.php

@@ -1,0 +1,1 @@
+1722835397a:5:{s:4:"name";s:9:"Event Log";s:4:"form";s:46:"~/modules/system/models/requestlog/fields.yaml";s:10:"modelClass";s:24:"System\Models\RequestLog";s:15:"defaultRedirect";s:18:"system/requestlogs";s:7:"preview";a:1:{s:5:"title";s:7:"Request";}}

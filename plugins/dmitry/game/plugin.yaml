@@ -1,0 +1,17 @@
+plugin:
+    name: 'dmitry.game::lang.plugin.name'
+    description: 'dmitry.game::lang.plugin.description'
+    author: Dmitry
+    icon: oc-icon-gamepad
+    homepage: ''
+permissions:
+    dmitry.game.access_games:
+        tab: Game
+        label: 'Access to Games'
+navigation:
+    main-menu-item:
+        label: Игра
+        url: dmitry/game/gamescontroller
+        icon: icon-gamepad
+        permissions:
+            - acme.game.access_games

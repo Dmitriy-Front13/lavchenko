@@ -1,0 +1,75 @@
+1722860645a:1:{s:7:"ads.htm";a:8:{s:8:"fileName";s:7:"ads.htm";s:7:"content";s:1560:"url = "/support"
+layout = "default"
+title = "support"
+==
+{% partial "header"%}
+
+<main>
+            <div class="container">
+                <form class="support-form" action="#">
+                    <div class="support-form__box">
+                        <input class="support-form__input" type="text" id="input1" placeholder="Your first name">
+                        <input class="support-form__input" type="text" id="input2" placeholder="last name">
+                        <input class="support-form__input" type="text" id="input3" placeholder="phone">
+                        <input class="support-form__input" type="text" id="input4" placeholder="Your mail">
+                    </div>
+                    <p class="support-form__text">Write your question</p>
+                    <textarea class="support-form__textarea"></textarea>
+                    <button class="support-form__btn" data-fancybox data-src="#modal-support">Send</button>
+                </form>
+            </div>
+            </div>
+    </main>
+
+    {% partial "footer"%}
+
+    <div class="modal-home" id="modal-support">
+            <p>Thank you, we will contact you as soon as possible</p>
+            <a href="./index.html">
+                to Home Page
+            </a>
+        </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            closeButton: false,
+            dragToClose: false
+        });
+        </script>";s:5:"mtime";i:1722624192;s:6:"markup";s:1499:"{% partial "header"%}
+
+<main>
+            <div class="container">
+                <form class="support-form" action="#">
+                    <div class="support-form__box">
+                        <input class="support-form__input" type="text" id="input1" placeholder="Your first name">
+                        <input class="support-form__input" type="text" id="input2" placeholder="last name">
+                        <input class="support-form__input" type="text" id="input3" placeholder="phone">
+                        <input class="support-form__input" type="text" id="input4" placeholder="Your mail">
+                    </div>
+                    <p class="support-form__text">Write your question</p>
+                    <textarea class="support-form__textarea"></textarea>
+                    <button class="support-form__btn" data-fancybox data-src="#modal-support">Send</button>
+                </form>
+            </div>
+            </div>
+    </main>
+
+    {% partial "footer"%}
+
+    <div class="modal-home" id="modal-support">
+            <p>Thank you, we will contact you as soon as possible</p>
+            <a href="./index.html">
+                to Home Page
+            </a>
+        </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            closeButton: false,
+            dragToClose: false
+        });
+        </script>";s:4:"code";N;s:3:"url";s:8:"/support";s:6:"layout";s:7:"default";s:5:"title";s:7:"support";}}

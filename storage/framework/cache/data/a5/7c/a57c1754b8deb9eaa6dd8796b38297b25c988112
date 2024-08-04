@@ -1,0 +1,1 @@
+1722826575a:1:{s:6:"fields";a:2:{s:14:"blueprint_uuid";a:1:{s:4:"type";s:12:"checkboxlist";}s:15:"include_related";a:4:{s:4:"type";s:8:"checkbox";s:5:"label";s:26:"Include Related Blueprints";s:7:"comment";s:89:"Scan the selected blueprint for any related blueprints and include them in the selection.";s:7:"default";b:1;}}}
