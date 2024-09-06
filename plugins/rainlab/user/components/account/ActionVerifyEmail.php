@@ -5,6 +5,7 @@ use Auth;
 use Flash;
 use Request;
 use Redirect;
+use Session;
 use RainLab\User\Models\User;
 use RainLab\User\Models\UserLog;
 use ApplicationException;
@@ -72,6 +73,7 @@ trait ActionVerifyEmail
         // Verify the bearer/user
         if (!$user->hasVerifiedEmail()) {
             $user->markEmailAsVerified();
+            Session::put('showModal', true);
 
             UserLog::createRecord($user->getKey(), UserLog::TYPE_SELF_VERIFY, [
                 'user_full_name' => $user->full_name,

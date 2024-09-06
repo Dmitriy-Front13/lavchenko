@@ -1,0 +1,1 @@
+1724973820a:5:{s:4:"name";s:13:"Mail Branding";s:4:"form";s:52:"~/modules/system/models/mailbrandsetting/fields.yaml";s:10:"modelClass";s:30:"System\Models\MailBrandSetting";s:15:"defaultRedirect";s:15:"system/settings";s:6:"design";a:1:{s:11:"displayMode";s:7:"sidebar";}}

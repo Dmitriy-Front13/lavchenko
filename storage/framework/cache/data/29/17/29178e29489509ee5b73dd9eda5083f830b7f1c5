@@ -1,0 +1,18 @@
+1725397479a:1:{s:15:"site/footer.htm";a:5:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:319:"<div id="footer" class="mt-5">
+    <div class="container pt-3 border-top">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <p class="text-muted">&copy; 2013 - {{ "now"|date("Y") }} Alexey Bobkov &amp; Samuel Georges.</p>
+            </div>
+        </div>
+    </div>
+</div>
+";s:5:"mtime";i:1714945456;s:6:"markup";s:318:"<div id="footer" class="mt-5">
+    <div class="container pt-3 border-top">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <p class="text-muted">&copy; 2013 - {{ "now"|date("Y") }} Alexey Bobkov &amp; Samuel Georges.</p>
+            </div>
+        </div>
+    </div>
+</div>";s:4:"code";N;}}

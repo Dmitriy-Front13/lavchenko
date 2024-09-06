@@ -1,0 +1,315 @@
+1725725745a:1:{s:12:"gameclos.htm";a:11:{s:8:"fileName";s:12:"gameclos.htm";s:7:"content";s:12380:"url = "/gameclose"
+layout = "default"
+title = "gameclose"
+
+[GameInfo]
+
+[Timer]
+
+[GameStats]
+==
+<header class="header">
+        <div class="container">
+            <a class="header__logo--rules" href="/">
+                <img src="{{ 'assets/images/logo.svg' | theme }}" alt="logo img">
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <section class="gameclose">
+            <div class="container">
+                <div class="gameclose__wrapper">
+                <div class="gameclose__inner" style="background-color: #000;">
+                    <div class="gameclose__userpic">
+                        <img src="{{  user.getAvatarThumb(340) }}" alt="">
+                    </div>
+                    {% if isWin %}
+                    <h2 class="gameclose__title">
+                        New winner
+                        <img src="{{ 'assets/images/trophy-cup.svg' | theme }}" alt="trophy img">
+                        <span class="fi fi-{{ user.country.code|lower }}"></span>
+                    </h2>
+                    {% else %}
+                    <h2 class="gameclose__title lose">
+                    Loser
+                    <span class="fi fi-{{ user.country.code|lower }}"></span>
+                    </h2>
+                    {% endif %}
+                    <div class="gameclose__info">
+                        <p class="gameclose__info-name">
+                        <span class="fi fi-{{ user.country.code|lower }}"></span>
+                        {{ user.first_name }} {{ user.last_name }}
+                        <span class="fi fi-{{ user.country.code|lower }}"></span>
+                        </p>
+                        <div class="gameclose__info-condition">
+                        {% if isWin %}
+                            <h5 class="gameclose__condition-title">The first one to find
+                            </h5>
+                            <p class="gameclose__condition-text">
+                                the
+                                <img src="{{ icon.getPath() }}" alt="logo">
+                                logo and get ${{ cash }} {{ lastGameUpdatedAt | date('F j, Y') }}
+                            </p>
+                            {% else %}
+                            <p class="gameclose__condition-text--loser">
+                                    You lost but all is not lost keep fighting!
+                                </p>
+                            {% endif %}
+                        </div>
+                        <div class="gameclose__attempts">
+                            Selected cells
+                            <div class="gameclose__attempts-box">
+                            {% for number in selectedNumbers %}
+    {% set attemptClass = '' %}
+    {% if number == winningNumber %}
+        {% set attemptClass='yes' %}
+    {% endif %}
+    <span class="{{ attemptClass }}">{{ number }}</span>
+{% endfor %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="gameclose__timer">
+                        <h4 class="gameclose__timer-title">Next game starts in</h4>
+                        <div class="gameclose__timer-box">
+                            <div class="gameclose__timer-time" id="gameCloseTimer">3:04:02:01</div>
+                            <div class="gameclose__timer-date">{{ lastGame.created_at|date('d-m-Y')}}</div>
+                            <div class="gameclose__timer-hours">{{ lastGame.created_at|date("h:i A", "America/New_York")}} EST</div>
+                        </div>
+                    </div>
+                    <div class="gameclose__share">
+                        <p class="gameclose__share-title">Share the records</p>
+                        <ul class="gameclose__share-list">
+                            <li class="gameclose__share-item" data-title="mi77ion.com" data-sharer="facebook" data-url="mi77ion.com" >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="#ffffff" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/>
+                                </svg>
+                            </li>
+                            <li class="gameclose__share-item" data-sharer="twitter" data-url="https://mi77ion.com">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_564_32" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="13" height="13">
+                                        <path d="M0.5 0H12.5V12.5391H0.5V0Z" fill="white" />
+                                    </mask>
+                                    <g mask="url(#mask0_564_32)">
+                                        <path
+                                            d="M9.95 0.587891H11.7903L7.77029 5.4011L12.5 11.9519H8.79714L5.89486 7.97967L2.57771 11.9519H0.735714L5.03514 6.80189L0.5 0.588786H4.29714L6.91657 4.21884L9.95 0.587891ZM9.30286 10.7983H10.3229L3.74 1.68148H2.64629L9.30286 10.7983Z"
+                                            fill="white" />
+                                    </g>
+                                </svg>
+                            </li>
+                            <li class="gameclose__share-item" data-sharer="threads">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="#ffffff" 
+                            d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/>
+                            </svg>
+                            </li>
+                            <li class="gameclose__share-item" data-sharer="whatsapp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="#ffffff" 
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                            </svg>
+                            </li>
+                            <li class="gameclose__share-item"> 
+                            <a id="download-btn" href="#" download="screenshot.png">
+                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.749 10.8422L17.1 6.47114V24.6967C17.1 25.2007 17.3002 25.6841 17.6565 26.0405C18.0128 26.3969 18.4961 26.5972 19 26.5972C19.5039 26.5972 19.9872 26.3969 20.3435 26.0405C20.6998 25.6841 20.9 25.2007 20.9 24.6967V6.47114L25.251 10.8422C25.4276 11.0204 25.6378 11.1617 25.8693 11.2582C26.1008 11.3547 26.3492 11.4044 26.6 11.4044C26.8508 11.4044 27.0992 11.3547 27.3307 11.2582C27.5622 11.1617 27.7724 11.0204 27.949 10.8422C28.1271 10.6656 28.2684 10.4554 28.3649 10.2238C28.4614 9.99218 28.511 9.74378 28.511 9.49289C28.511 9.24201 28.4614 8.9936 28.3649 8.76201C28.2684 8.53042 28.1271 8.32023 27.949 8.14356L20.349 0.541661C20.1683 0.36864 19.9552 0.233013 19.722 0.142561C19.2594 -0.0475204 18.7406 -0.0475204 18.278 0.142561C18.0448 0.233013 17.8317 0.36864 17.651 0.541661L10.051 8.14356C9.87385 8.32075 9.73332 8.53112 9.63745 8.76264C9.54157 8.99416 9.49223 9.2423 9.49223 9.49289C9.49223 9.74349 9.54157 9.99163 9.63745 10.2231C9.73332 10.4547 9.87385 10.665 10.051 10.8422C10.2282 11.0194 10.4385 11.16 10.6699 11.2559C10.9014 11.3518 11.1495 11.4011 11.4 11.4011C11.6505 11.4011 11.8986 11.3518 12.1301 11.2559C12.3615 11.16 12.5718 11.0194 12.749 10.8422ZM36.1 18.9953C35.5961 18.9953 35.1128 19.1955 34.7565 19.5519C34.4002 19.9083 34.2 20.3917 34.2 20.8957V32.2986C34.2 32.8026 33.9998 33.286 33.6435 33.6424C33.2872 33.9988 32.8039 34.1991 32.3 34.1991H5.7C5.19609 34.1991 4.71282 33.9988 4.3565 33.6424C4.00018 33.286 3.8 32.8026 3.8 32.2986V20.8957C3.8 20.3917 3.59982 19.9083 3.2435 19.5519C2.88718 19.1955 2.40391 18.9953 1.9 18.9953C1.39609 18.9953 0.912816 19.1955 0.556497 19.5519C0.200178 19.9083 0 20.3917 0 20.8957V32.2986C0 33.8107 0.600534 35.2609 1.66949 36.3301C2.73845 37.3993 4.18827 38 5.7 38H32.3C33.8117 38 35.2616 37.3993 36.3305 36.3301C37.3995 35.2609 38 33.8107 38 32.2986V20.8957C38 20.3917 37.7998 19.9083 37.4435 19.5519C37.0872 19.1955 36.6039 18.9953 36.1 18.9953Z" fill="white"/>
+                        </svg>
+                        </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% partial 'footer' %}
+    <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/src/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script>
+    <script src="{{ 'assets/js/share.js'| theme }}"></script>
+    <script>
+    // Получаем дату дедлайна из Twig
+    const deadline = new Date("{{ lastGame.created_at|date("Y-m-d H:i:s") }}").getTime();
+
+    // Обновление таймера каждую секунду
+    const timer = setInterval(function() {
+
+        // Текущее время
+        const now = new Date().getTime();
+
+        // Разница между дедлайном и текущим временем
+        const timeLeft = deadline - now;
+
+        // Расчёт времени
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Выводим результат в элемент с id="countdown"
+        document.getElementById("gameCloseTimer").innerHTML = days + ":" + hours + ":"
+        + minutes + ":" + seconds;
+
+        // Если таймер достиг нуля, то
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            document.getElementById("gameCloseTimer").innerHTML = "Game start!";
+        }
+    }, 1000);
+</script>";s:5:"mtime";i:1725552791;s:6:"markup";s:12275:"<header class="header">
+        <div class="container">
+            <a class="header__logo--rules" href="/">
+                <img src="{{ 'assets/images/logo.svg' | theme }}" alt="logo img">
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <section class="gameclose">
+            <div class="container">
+                <div class="gameclose__wrapper">
+                <div class="gameclose__inner" style="background-color: #000;">
+                    <div class="gameclose__userpic">
+                        <img src="{{  user.getAvatarThumb(340) }}" alt="">
+                    </div>
+                    {% if isWin %}
+                    <h2 class="gameclose__title">
+                        New winner
+                        <img src="{{ 'assets/images/trophy-cup.svg' | theme }}" alt="trophy img">
+                        <span class="fi fi-{{ user.country.code|lower }}"></span>
+                    </h2>
+                    {% else %}
+                    <h2 class="gameclose__title lose">
+                    Loser
+                    <span class="fi fi-{{ user.country.code|lower }}"></span>
+                    </h2>
+                    {% endif %}
+                    <div class="gameclose__info">
+                        <p class="gameclose__info-name">
+                        <span class="fi fi-{{ user.country.code|lower }}"></span>
+                        {{ user.first_name }} {{ user.last_name }}
+                        <span class="fi fi-{{ user.country.code|lower }}"></span>
+                        </p>
+                        <div class="gameclose__info-condition">
+                        {% if isWin %}
+                            <h5 class="gameclose__condition-title">The first one to find
+                            </h5>
+                            <p class="gameclose__condition-text">
+                                the
+                                <img src="{{ icon.getPath() }}" alt="logo">
+                                logo and get ${{ cash }} {{ lastGameUpdatedAt | date('F j, Y') }}
+                            </p>
+                            {% else %}
+                            <p class="gameclose__condition-text--loser">
+                                    You lost but all is not lost keep fighting!
+                                </p>
+                            {% endif %}
+                        </div>
+                        <div class="gameclose__attempts">
+                            Selected cells
+                            <div class="gameclose__attempts-box">
+                            {% for number in selectedNumbers %}
+    {% set attemptClass = '' %}
+    {% if number == winningNumber %}
+        {% set attemptClass='yes' %}
+    {% endif %}
+    <span class="{{ attemptClass }}">{{ number }}</span>
+{% endfor %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="gameclose__timer">
+                        <h4 class="gameclose__timer-title">Next game starts in</h4>
+                        <div class="gameclose__timer-box">
+                            <div class="gameclose__timer-time" id="gameCloseTimer">3:04:02:01</div>
+                            <div class="gameclose__timer-date">{{ lastGame.created_at|date('d-m-Y')}}</div>
+                            <div class="gameclose__timer-hours">{{ lastGame.created_at|date("h:i A", "America/New_York")}} EST</div>
+                        </div>
+                    </div>
+                    <div class="gameclose__share">
+                        <p class="gameclose__share-title">Share the records</p>
+                        <ul class="gameclose__share-list">
+                            <li class="gameclose__share-item" data-title="mi77ion.com" data-sharer="facebook" data-url="mi77ion.com" >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="#ffffff" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/>
+                                </svg>
+                            </li>
+                            <li class="gameclose__share-item" data-sharer="twitter" data-url="https://mi77ion.com">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_564_32" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="13" height="13">
+                                        <path d="M0.5 0H12.5V12.5391H0.5V0Z" fill="white" />
+                                    </mask>
+                                    <g mask="url(#mask0_564_32)">
+                                        <path
+                                            d="M9.95 0.587891H11.7903L7.77029 5.4011L12.5 11.9519H8.79714L5.89486 7.97967L2.57771 11.9519H0.735714L5.03514 6.80189L0.5 0.588786H4.29714L6.91657 4.21884L9.95 0.587891ZM9.30286 10.7983H10.3229L3.74 1.68148H2.64629L9.30286 10.7983Z"
+                                            fill="white" />
+                                    </g>
+                                </svg>
+                            </li>
+                            <li class="gameclose__share-item" data-sharer="threads">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="#ffffff" 
+                            d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/>
+                            </svg>
+                            </li>
+                            <li class="gameclose__share-item" data-sharer="whatsapp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="#ffffff" 
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                            </svg>
+                            </li>
+                            <li class="gameclose__share-item"> 
+                            <a id="download-btn" href="#" download="screenshot.png">
+                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.749 10.8422L17.1 6.47114V24.6967C17.1 25.2007 17.3002 25.6841 17.6565 26.0405C18.0128 26.3969 18.4961 26.5972 19 26.5972C19.5039 26.5972 19.9872 26.3969 20.3435 26.0405C20.6998 25.6841 20.9 25.2007 20.9 24.6967V6.47114L25.251 10.8422C25.4276 11.0204 25.6378 11.1617 25.8693 11.2582C26.1008 11.3547 26.3492 11.4044 26.6 11.4044C26.8508 11.4044 27.0992 11.3547 27.3307 11.2582C27.5622 11.1617 27.7724 11.0204 27.949 10.8422C28.1271 10.6656 28.2684 10.4554 28.3649 10.2238C28.4614 9.99218 28.511 9.74378 28.511 9.49289C28.511 9.24201 28.4614 8.9936 28.3649 8.76201C28.2684 8.53042 28.1271 8.32023 27.949 8.14356L20.349 0.541661C20.1683 0.36864 19.9552 0.233013 19.722 0.142561C19.2594 -0.0475204 18.7406 -0.0475204 18.278 0.142561C18.0448 0.233013 17.8317 0.36864 17.651 0.541661L10.051 8.14356C9.87385 8.32075 9.73332 8.53112 9.63745 8.76264C9.54157 8.99416 9.49223 9.2423 9.49223 9.49289C9.49223 9.74349 9.54157 9.99163 9.63745 10.2231C9.73332 10.4547 9.87385 10.665 10.051 10.8422C10.2282 11.0194 10.4385 11.16 10.6699 11.2559C10.9014 11.3518 11.1495 11.4011 11.4 11.4011C11.6505 11.4011 11.8986 11.3518 12.1301 11.2559C12.3615 11.16 12.5718 11.0194 12.749 10.8422ZM36.1 18.9953C35.5961 18.9953 35.1128 19.1955 34.7565 19.5519C34.4002 19.9083 34.2 20.3917 34.2 20.8957V32.2986C34.2 32.8026 33.9998 33.286 33.6435 33.6424C33.2872 33.9988 32.8039 34.1991 32.3 34.1991H5.7C5.19609 34.1991 4.71282 33.9988 4.3565 33.6424C4.00018 33.286 3.8 32.8026 3.8 32.2986V20.8957C3.8 20.3917 3.59982 19.9083 3.2435 19.5519C2.88718 19.1955 2.40391 18.9953 1.9 18.9953C1.39609 18.9953 0.912816 19.1955 0.556497 19.5519C0.200178 19.9083 0 20.3917 0 20.8957V32.2986C0 33.8107 0.600534 35.2609 1.66949 36.3301C2.73845 37.3993 4.18827 38 5.7 38H32.3C33.8117 38 35.2616 37.3993 36.3305 36.3301C37.3995 35.2609 38 33.8107 38 32.2986V20.8957C38 20.3917 37.7998 19.9083 37.4435 19.5519C37.0872 19.1955 36.6039 18.9953 36.1 18.9953Z" fill="white"/>
+                        </svg>
+                        </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% partial 'footer' %}
+    <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/src/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script>
+    <script src="{{ 'assets/js/share.js'| theme }}"></script>
+    <script>
+    // Получаем дату дедлайна из Twig
+    const deadline = new Date("{{ lastGame.created_at|date("Y-m-d H:i:s") }}").getTime();
+
+    // Обновление таймера каждую секунду
+    const timer = setInterval(function() {
+
+        // Текущее время
+        const now = new Date().getTime();
+
+        // Разница между дедлайном и текущим временем
+        const timeLeft = deadline - now;
+
+        // Расчёт времени
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Выводим результат в элемент с id="countdown"
+        document.getElementById("gameCloseTimer").innerHTML = days + ":" + hours + ":"
+        + minutes + ":" + seconds;
+
+        // Если таймер достиг нуля, то
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            document.getElementById("gameCloseTimer").innerHTML = "Game start!";
+        }
+    }, 1000);
+</script>";s:4:"code";N;s:3:"url";s:10:"/gameclose";s:6:"layout";s:7:"default";s:5:"title";s:9:"gameclose";s:8:"GameInfo";a:0:{}s:5:"Timer";a:0:{}s:9:"GameStats";a:0:{}}}

@@ -1,0 +1,1 @@
+1723420584a:5:{s:4:"name";s:54:"gromit.forms::lang.controllers.submissions.record_name";s:4:"form";s:44:"$/gromit/forms/models/submission/fields.yaml";s:10:"modelClass";s:30:"GromIT\Forms\Models\Submission";s:15:"defaultRedirect";s:24:"gromit/forms/submissions";s:7:"preview";a:1:{s:5:"title";s:61:"gromit.forms::lang.controllers.submissions.preview_page_title";}}

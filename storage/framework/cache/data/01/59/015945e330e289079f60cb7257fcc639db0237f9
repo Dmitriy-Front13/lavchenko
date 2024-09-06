@@ -1,0 +1,13 @@
+1725702051a:1:{s:19:"modal-confEmail.htm";a:5:{s:8:"fileName";s:19:"modal-confEmail.htm";s:7:"content";s:286:"<div class="modal-confEmail" id="modal-confEmail">
+<button class="closeModal-btn"></button>
+        <p>E-mail address confirmed!</p>
+        <a href="account">
+            <img src="{{ 'assets/images/emailConf.svg' | theme }}" alt="img email confirmation">
+        </a>
+    </div>";s:5:"mtime";i:1723764037;s:6:"markup";s:286:"<div class="modal-confEmail" id="modal-confEmail">
+<button class="closeModal-btn"></button>
+        <p>E-mail address confirmed!</p>
+        <a href="account">
+            <img src="{{ 'assets/images/emailConf.svg' | theme }}" alt="img email confirmation">
+        </a>
+    </div>";s:4:"code";N;}}

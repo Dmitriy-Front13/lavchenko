@@ -1,0 +1,1 @@
+1725681869a:1:{s:7:"columns";a:2:{s:6:"detail";a:4:{s:5:"label";s:6:"Detail";s:4:"type";s:7:"partial";s:10:"searchable";b:0;s:8:"sortable";b:0;}s:10:"created_at";a:4:{s:5:"label";s:7:"Created";s:4:"type";s:9:"timetense";s:8:"sortable";b:1;s:10:"searchable";b:0;}}}

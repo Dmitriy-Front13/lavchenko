@@ -1,0 +1,11 @@
+plugin:
+    name: 'dmitry.adsbanner::lang.plugin.name'
+    description: 'dmitry.adsbanner::lang.plugin.description'
+    author: Dmitry
+    icon: oc-icon-image
+    homepage: ''
+navigation:
+    Banner:
+        label: Banner
+        url: dmitry/adsbanner/banner
+        icon: icon-image

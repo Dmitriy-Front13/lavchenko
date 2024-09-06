@@ -1,0 +1,18 @@
+1725397479a:1:{s:21:"modals/ajax-modal.htm";a:5:{s:8:"fileName";s:21:"modals/ajax-modal.htm";s:7:"content";s:316:"<div class="modal" id="siteModal">
+    <div class="modal-dialog modal-dialog-centered" id="siteModalContent">
+        <!-- Partial Contents Will Go Here -->
+    </div>
+
+    <div class="modal-dialog modal-dialog-centered modal-loading">
+        <div class="spinner-border text-light mx-auto"></div>
+    </div>
+</div>
+";s:5:"mtime";i:1714945456;s:6:"markup";s:315:"<div class="modal" id="siteModal">
+    <div class="modal-dialog modal-dialog-centered" id="siteModalContent">
+        <!-- Partial Contents Will Go Here -->
+    </div>
+
+    <div class="modal-dialog modal-dialog-centered modal-loading">
+        <div class="spinner-border text-light mx-auto"></div>
+    </div>
+</div>";s:4:"code";N;}}

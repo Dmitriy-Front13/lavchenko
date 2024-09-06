@@ -4,7 +4,6 @@ use Cms;
 use Auth;
 use Event;
 use Validator;
-use Redirect;
 use RainLab\User\Models\User;
 use RainLab\User\Models\Setting;
 use RainLab\User\Models\UserLog;
@@ -62,8 +61,6 @@ class Registration extends ComponentBase
         else {
             $user = $this->createNewUser($input);
         }
-        $user->setUrlForEmailVerification('https://lavchenko/');
-        $user->sendEmailVerificationNotification();
 
         Auth::login($user);
 
@@ -88,12 +85,11 @@ class Registration extends ComponentBase
             return $event;
         }
 
-        return Redirect::to('/');
         // Redirect to the intended page after successful registration
-        // if ($redirect = Cms::redirectIntendedFromPost()) {
-        //     return $redirect;
-        // }
+        if ($redirect = Cms::redirectIntendedFromPost()) {
+            return $redirect;
         }
+    }
 
     /**
      * createNewUser implements the logic for creating a new user

@@ -1,0 +1,1 @@
+1723723013a:7:{s:4:"name";s:5:"Entry";s:4:"form";a:0:{}s:10:"modelClass";s:25:"Tailor\Models\EntryRecord";s:15:"defaultRedirect";s:14:"tailor/entries";s:6:"create";a:1:{s:5:"title";s:12:"Create Entry";}s:6:"update";a:1:{s:5:"title";s:10:"Edit Entry";}s:7:"preview";a:1:{s:5:"title";s:13:"Preview Entry";}}

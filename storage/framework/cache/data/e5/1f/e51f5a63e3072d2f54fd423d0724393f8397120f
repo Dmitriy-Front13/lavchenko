@@ -1,0 +1,31 @@
+1725397478a:1:{s:20:"account/password.htm";a:10:{s:8:"fileName";s:20:"account/password.htm";s:7:"content";s:391:"##
+url = "/account/password"
+layout = "default"
+title = "New Password"
+
+[resetPassword]
+isDefault = 1
+
+[resources]
+vars[activeNavLink] = 'account'
+==
+{% if not resetPassword.canReset %}
+    {% do abort(404) %}
+{% endif %}
+<div class="page-account">
+    <div class="py-4">
+        <main class="form-login m-auto">
+            {% component 'resetPassword' %}
+        </main>
+    </div>
+</div>
+";s:5:"mtime";i:1714945456;s:6:"markup";s:240:"{% if not resetPassword.canReset %}
+    {% do abort(404) %}
+{% endif %}
+<div class="page-account">
+    <div class="py-4">
+        <main class="form-login m-auto">
+            {% component 'resetPassword' %}
+        </main>
+    </div>
+</div>";s:4:"code";N;s:3:"url";s:17:"/account/password";s:6:"layout";s:7:"default";s:5:"title";s:12:"New Password";s:13:"resetPassword";a:1:{s:9:"isDefault";s:1:"1";}s:9:"resources";a:1:{s:4:"vars";a:1:{s:13:"activeNavLink";s:7:"account";}}}}

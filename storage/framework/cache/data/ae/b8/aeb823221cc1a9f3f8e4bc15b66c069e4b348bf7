@@ -1,0 +1,65 @@
+1725397478a:1:{s:19:"account/profile.htm";a:14:{s:8:"fileName";s:19:"account/profile.htm";s:7:"content";s:1201:"##
+title = "Profile Details"
+url = "/account/profile"
+layout = "default"
+description = "Manage address book and contact details."
+
+[session]
+security = "user"
+redirect = "account/login"
+
+[account]
+isDefault = 1
+
+[addressBook]
+[location]
+
+[resources]
+vars[activeNavLink] = 'profile'
+==
+{# Remove this if you like #}
+{% if not addressBook %}
+    <div class="alert alert-warning" role="alert">
+        <p class="mb-0">The plugin <code>RainLab.UserPlus</code> was not found. Please install this plugin in the Admin Panel using the <strong>System → System Updates → Install Packages</strong> page.</p>
+    </div>
+{% else %}
+    <div class="alert alert-info" role="alert">
+        <p class="mb-0"><strong>Tip</strong>: Enable or disable the address book using the <strong>System → User Settings → Profile</strong> page.</p>
+    </div>
+{% endif %}
+
+<div class="page-account">
+    {% if addressBook.useAddressBook %}
+        {% ajaxPartial 'account/address-book-view' %}
+    {% else %}
+        <div class="mb-4">
+            {% ajaxPartial 'account/field-profile' %}
+        </div>
+        <div class="mb-4">
+            {% ajaxPartial 'account/field-address' %}
+        </div>
+    {% endif %}
+</div>
+";s:5:"mtime";i:1714945456;s:6:"markup";s:915:"{# Remove this if you like #}
+{% if not addressBook %}
+    <div class="alert alert-warning" role="alert">
+        <p class="mb-0">The plugin <code>RainLab.UserPlus</code> was not found. Please install this plugin in the Admin Panel using the <strong>System → System Updates → Install Packages</strong> page.</p>
+    </div>
+{% else %}
+    <div class="alert alert-info" role="alert">
+        <p class="mb-0"><strong>Tip</strong>: Enable or disable the address book using the <strong>System → User Settings → Profile</strong> page.</p>
+    </div>
+{% endif %}
+
+<div class="page-account">
+    {% if addressBook.useAddressBook %}
+        {% ajaxPartial 'account/address-book-view' %}
+    {% else %}
+        <div class="mb-4">
+            {% ajaxPartial 'account/field-profile' %}
+        </div>
+        <div class="mb-4">
+            {% ajaxPartial 'account/field-address' %}
+        </div>
+    {% endif %}
+</div>";s:4:"code";N;s:5:"title";s:15:"Profile Details";s:3:"url";s:16:"/account/profile";s:6:"layout";s:7:"default";s:11:"description";s:40:"Manage address book and contact details.";s:7:"session";a:2:{s:8:"security";s:4:"user";s:8:"redirect";s:13:"account/login";}s:7:"account";a:1:{s:9:"isDefault";s:1:"1";}s:11:"addressBook";a:0:{}s:8:"location";a:0:{}s:9:"resources";a:1:{s:4:"vars";a:1:{s:13:"activeNavLink";s:7:"profile";}}}}

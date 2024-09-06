@@ -1,50 +1,62 @@
-1722860645a:1:{s:9:"rules.htm";a:8:{s:8:"fileName";s:9:"rules.htm";s:7:"content";s:3122:"url = "/ads"
+1725702048a:1:{s:9:"rules.htm";a:9:{s:8:"fileName";s:9:"rules.htm";s:7:"content";s:2370:"url = "/ads"
 layout = "default"
 title = "ADS"
+
+[uploadForm adsForm]
+group = "ADS"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+reset_form = 1
+inline_errors = "disabled"
+js_on_success = "Fancybox.show([{
+          src: \"#modal-adv\",
+          type: \"inline\",
+          closeButton: false,
+          dragToClose: false,
+          closeExisting: true
+      }]);"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+uploader_enable = 1
+uploader_multi = 0
+placeholderText = "Upload advertisement"
+removeText = "Вы уверены?"
+maxSize = 5
+fileTypes[] = "jpg"
+fileTypes[] = "jpeg"
+fileTypes[] = "bmp"
+fileTypes[] = "png"
+fileTypes[] = "webp"
+fileTypes[] = "gif"
+fileTypes[] = "svg"
+fileTypes[] = "wav"
+fileTypes[] = "avi"
+fileTypes[] = "mov"
+fileTypes[] = "mp4"
+fileTypes[] = "mpeg"
+fileTypes[] = "webm"
 ==
 {% partial "header" %}
 <main>
         <div class="container">
-            <form class="ads-form" action="#">
-                <div class="ads-form__inner">
-                    <input class="ads-form__input" type="text" id="input1" placeholder="Your first">
-                    <input class="ads-form__input" type="text" id="input2" placeholder="last name">
-                    <input class="ads-form__input" type="text" id="input3" placeholder="phone">
-                    <input class="ads-form__input" type="text" id="input4" placeholder="Your mail">
-                    <div class="ads-form__input-box">
-                        <input class="ads-form__input" type="text" id="input5" placeholder="insert link to banner">
-                        <button class="ads-form__info-btn" id="info-btn" type="button"></button>
-                        <div class="ads-info" id="ads-info">
-                            <p class="ads-info__text">If you don't have a link, attach an image in the bottom column
-                            </p>
-                        </div>
-                        <div class="ads-form__box">
-                            <img src="{{'assets/images/adv.svg' | theme }}" alt="share img">
-                            <div class="ads-form__box-text">
-                                <h5 class="ads-form__box-title">Attach your advertisement</h5>
-                                <p class="ads-form__box-subtitle">Advertising must be <span>960x170</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="ads-form__btn" data-fancybox data-src="#modal-adv">Send</button>
-            </form>
+        <h3 class="title-page">ADS</h3>
+            {% component 'adsForm' %}
+            
         </div>
     </main>
     {% partial "footer" %}
 
     <div class="modal-home" id="modal-adv" style="padding: 97px 51px 50px;">
+    <a class="closeModal-btn" href='/'></a>
         <p>your application has been sent Wait for a response by email</p>
         <a href="/">to Home Page</a>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-        Fancybox.bind("[data-fancybox]", {
-            closeButton: false,
-            dragToClose: false
-        });
-    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const popoverBtn = document.getElementById('info-btn');
@@ -65,49 +77,23 @@ title = "ADS"
             });
         });
 
-    </script>";s:5:"mtime";i:1722624065;s:6:"markup";s:3069:"{% partial "header" %}
+    </script>";s:5:"mtime";i:1725287634;s:6:"markup";s:1286:"{% partial "header" %}
 <main>
         <div class="container">
-            <form class="ads-form" action="#">
-                <div class="ads-form__inner">
-                    <input class="ads-form__input" type="text" id="input1" placeholder="Your first">
-                    <input class="ads-form__input" type="text" id="input2" placeholder="last name">
-                    <input class="ads-form__input" type="text" id="input3" placeholder="phone">
-                    <input class="ads-form__input" type="text" id="input4" placeholder="Your mail">
-                    <div class="ads-form__input-box">
-                        <input class="ads-form__input" type="text" id="input5" placeholder="insert link to banner">
-                        <button class="ads-form__info-btn" id="info-btn" type="button"></button>
-                        <div class="ads-info" id="ads-info">
-                            <p class="ads-info__text">If you don't have a link, attach an image in the bottom column
-                            </p>
-                        </div>
-                        <div class="ads-form__box">
-                            <img src="{{'assets/images/adv.svg' | theme }}" alt="share img">
-                            <div class="ads-form__box-text">
-                                <h5 class="ads-form__box-title">Attach your advertisement</h5>
-                                <p class="ads-form__box-subtitle">Advertising must be <span>960x170</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="ads-form__btn" data-fancybox data-src="#modal-adv">Send</button>
-            </form>
+        <h3 class="title-page">ADS</h3>
+            {% component 'adsForm' %}
+            
         </div>
     </main>
     {% partial "footer" %}
 
     <div class="modal-home" id="modal-adv" style="padding: 97px 51px 50px;">
+    <a class="closeModal-btn" href='/'></a>
         <p>your application has been sent Wait for a response by email</p>
         <a href="/">to Home Page</a>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-        Fancybox.bind("[data-fancybox]", {
-            closeButton: false,
-            dragToClose: false
-        });
-    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const popoverBtn = document.getElementById('info-btn');
@@ -128,4 +114,10 @@ title = "ADS"
             });
         });
 
-    </script>";s:4:"code";N;s:3:"url";s:4:"/ads";s:6:"layout";s:7:"default";s:5:"title";s:3:"ADS";}}
+    </script>";s:4:"code";N;s:3:"url";s:4:"/ads";s:6:"layout";s:7:"default";s:5:"title";s:3:"ADS";s:18:"uploadForm adsForm";a:18:{s:5:"group";s:3:"ADS";s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"js_on_success";s:178:"Fancybox.show([{
+          src: "#modal-adv",
+          type: "inline",
+          closeButton: false,
+          dragToClose: false,
+          closeExisting: true
+      }]);";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";s:15:"uploader_enable";s:1:"1";s:14:"uploader_multi";s:1:"0";s:15:"placeholderText";s:20:"Upload advertisement";s:10:"removeText";s:20:"Вы уверены?";s:7:"maxSize";s:1:"5";s:9:"fileTypes";a:13:{i:0;s:3:"jpg";i:1;s:4:"jpeg";i:2;s:3:"bmp";i:3;s:3:"png";i:4;s:4:"webp";i:5;s:3:"gif";i:6;s:3:"svg";i:7;s:3:"wav";i:8;s:3:"avi";i:9;s:3:"mov";i:10;s:3:"mp4";i:11;s:4:"mpeg";i:12;s:4:"webm";}}}}

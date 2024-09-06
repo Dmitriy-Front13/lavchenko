@@ -1,0 +1,31 @@
+1725397478a:1:{s:15:"forum/index.htm";a:12:{s:8:"fileName";s:15:"forum/index.htm";s:7:"content";s:634:"##
+title = "Forum"
+url = "/forum"
+layout = "default"
+description = "The main forum page with all the channels."
+hidden = "0"
+
+[resources]
+vars[activeNavLink] = 'forum'
+
+[forumChannels]
+memberPage = "404"
+channelPage = "forum/channel"
+topicPage = "forum/topic"
+==
+{# Remove this if you like #}
+{% if not forumChannels %}
+    <div class="alert alert-warning" role="alert">
+        <p class="mb-0">The plugin <code>RainLab.Forum</code> was not found. Please install this plugin in the Admin Panel using the <strong>System → System Updates → Install Packages</strong> page.</p>
+    </div>
+{% endif %}
+
+{% component 'forumChannels' %}
+";s:5:"mtime";i:1714945456;s:6:"markup";s:370:"{# Remove this if you like #}
+{% if not forumChannels %}
+    <div class="alert alert-warning" role="alert">
+        <p class="mb-0">The plugin <code>RainLab.Forum</code> was not found. Please install this plugin in the Admin Panel using the <strong>System → System Updates → Install Packages</strong> page.</p>
+    </div>
+{% endif %}
+
+{% component 'forumChannels' %}";s:4:"code";N;s:5:"title";s:5:"Forum";s:3:"url";s:6:"/forum";s:6:"layout";s:7:"default";s:11:"description";s:42:"The main forum page with all the channels.";s:6:"hidden";s:1:"0";s:9:"resources";a:1:{s:4:"vars";a:1:{s:13:"activeNavLink";s:5:"forum";}}s:13:"forumChannels";a:3:{s:10:"memberPage";s:3:"404";s:11:"channelPage";s:13:"forum/channel";s:9:"topicPage";s:11:"forum/topic";}}}

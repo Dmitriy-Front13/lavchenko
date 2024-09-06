@@ -1,0 +1,1 @@
+1723420584a:1:{s:6:"scopes";a:1:{s:4:"form";a:4:{s:5:"label";s:54:"gromit.forms::lang.controllers.submissions.filter_form";s:10:"modelClass";s:24:"GromIT\Forms\Models\Form";s:10:"conditions";s:22:"form_id in (:filtered)";s:8:"nameFrom";s:4:"name";}}}

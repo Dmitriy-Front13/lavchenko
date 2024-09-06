@@ -1,4 +1,4 @@
-1722860645a:1:{s:11:"support.htm";a:8:{s:8:"fileName";s:11:"support.htm";s:7:"content";s:1082:"url = "/about"
+1725702048a:1:{s:11:"support.htm";a:8:{s:8:"fileName";s:11:"support.htm";s:7:"content";s:1082:"url = "/about"
 layout = "default"
 title = "about us"
 ==
@@ -19,7 +19,7 @@ title = "about us"
             </div>
         </main>
         {% partial "footer" %}
-        </div>";s:5:"mtime";i:1722623751;s:6:"markup";s:1022:"<div class="wrapper-about">
+        </div>";s:5:"mtime";i:1723711429;s:6:"markup";s:1022:"<div class="wrapper-about">
 {% partial "header" %}
 <main class="main">
             <div class="container">

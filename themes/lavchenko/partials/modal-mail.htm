@@ -1,4 +1,7 @@
-<div class="modal-home" id="modal-mail">
-        <p>Check your mail</p>
-        <a href="/">to Home Page</a>
-    </div>
+<div class="modal-confEmail" id="modal-mail">
+<button class="closeModal-btn"></button>
+<p>We have sent confirmation messege on youre e-mail address. Check your mail and confirm your E-mail address</p>
+        <a href="{{ this.session.get('emailLink') }}" target="_blank">
+            <img src="{{ 'assets/images/modalEmail.svg' | theme }}" alt="img email">
+        </a>
+        </div>

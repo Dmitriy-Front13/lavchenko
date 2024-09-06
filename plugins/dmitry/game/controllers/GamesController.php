@@ -18,5 +18,7 @@ class GamesController extends Controller
     {
         parent::__construct();
     }
+    
+     
 
 }

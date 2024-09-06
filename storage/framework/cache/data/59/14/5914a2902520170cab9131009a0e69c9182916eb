@@ -1,0 +1,16 @@
+1725397479a:1:{s:23:"site/flash-messages.htm";a:5:{s:8:"fileName";s:23:"site/flash-messages.htm";s:7:"content";s:160:"{% flash %}
+    <p
+        data-control="flash-message"
+        data-type="{{ type }}"
+        data-interval="5">
+        {{ message }}
+    </p>
+{% endflash %}
+";s:5:"mtime";i:1714945456;s:6:"markup";s:159:"{% flash %}
+    <p
+        data-control="flash-message"
+        data-type="{{ type }}"
+        data-interval="5">
+        {{ message }}
+    </p>
+{% endflash %}";s:4:"code";N;}}

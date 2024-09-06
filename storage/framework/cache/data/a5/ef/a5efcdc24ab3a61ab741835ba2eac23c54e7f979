@@ -1,0 +1,107 @@
+1725641637a:1:{s:18:"game/gameclose.htm";a:5:{s:8:"fileName";s:18:"game/gameclose.htm";s:7:"content";s:2917:"<div class="main-gameclose">
+                    <div class="main-gameclose__title">
+                        GAME OVER
+                    </div>
+                    {% if not user %}
+                    <p class="main-gameclose__text--winner">
+                        Winner
+                    </p>
+                    <div class="main-gameclose__userpic">
+                        <img src="{{ winner.getAvatarThumb(256) }}" alt="">
+                    </div>
+                    <div class="main-gameclose__name">
+                        <span class="fi fi-{{ winner.country.code|lower }}"></span> {{ winner.first_name }} {{ winner.last_name }} <span class="fi fi-{{ winner.country.code|lower }}"></span>
+                    </div>
+                    {% else %}
+                    {% if isWin %}
+                    <p class="main-gameclose__text">
+                        You have won!
+                    </p>
+                    {% else %}
+                    <p class="main-gameclose__text main-gameclose__text--lose">
+                        You have lost!
+                    </p>
+                    {% endif %}
+                    {% endif %}
+                    <ul class="main-gameclose__info">
+                        <li class="main-gameclose__item">
+                            Target:
+                            <img src="{{ icon.getPath() }}" alt="">
+                        </li>
+                        <li class="main-gameclose__item">
+                            Present:
+                            <span>${{ cash }}</span>
+                        </li>
+                        <li class="main-gameclose__item">
+                            Date:
+                            {% if user %}
+                            <span>{{ gameUpdatedAt | date('d-m-Y') }}</span>
+                            {% else %}
+                            <span>{{ winGameUpdatedAt | date('d-m-Y') }}</span>
+                            {% endif %}
+                        </li>
+                    </ul>
+                    {% if not user %}
+                    <p class="main-gameclose__text-about">
+                        Our lottery consists of a grid containing 1000 squares. One of these squares hides the Apple logo behind it. Your task is to figure out where exactly this treasured logo is hidden and select the corresponding square. If you can find the Ell logo, you will be the winner and receive a <span>${{ cash }} prize!</span>
+                    </p>
+                    {% endif %}
+                    <div class="main-gameclose__timer">
+                        <p class="main-gameclose__timer-text">Next game starts</p>
+                        <span>{{ lastGame.created_at|date('d/m/Y')}}</span>
+                        <span>{{ lastGame.created_at|date("h:i A", "America/New_York")}} EST</span>
+                    </div>
+                </div>";s:5:"mtime";i:1725555232;s:6:"markup";s:2917:"<div class="main-gameclose">
+                    <div class="main-gameclose__title">
+                        GAME OVER
+                    </div>
+                    {% if not user %}
+                    <p class="main-gameclose__text--winner">
+                        Winner
+                    </p>
+                    <div class="main-gameclose__userpic">
+                        <img src="{{ winner.getAvatarThumb(256) }}" alt="">
+                    </div>
+                    <div class="main-gameclose__name">
+                        <span class="fi fi-{{ winner.country.code|lower }}"></span> {{ winner.first_name }} {{ winner.last_name }} <span class="fi fi-{{ winner.country.code|lower }}"></span>
+                    </div>
+                    {% else %}
+                    {% if isWin %}
+                    <p class="main-gameclose__text">
+                        You have won!
+                    </p>
+                    {% else %}
+                    <p class="main-gameclose__text main-gameclose__text--lose">
+                        You have lost!
+                    </p>
+                    {% endif %}
+                    {% endif %}
+                    <ul class="main-gameclose__info">
+                        <li class="main-gameclose__item">
+                            Target:
+                            <img src="{{ icon.getPath() }}" alt="">
+                        </li>
+                        <li class="main-gameclose__item">
+                            Present:
+                            <span>${{ cash }}</span>
+                        </li>
+                        <li class="main-gameclose__item">
+                            Date:
+                            {% if user %}
+                            <span>{{ gameUpdatedAt | date('d-m-Y') }}</span>
+                            {% else %}
+                            <span>{{ winGameUpdatedAt | date('d-m-Y') }}</span>
+                            {% endif %}
+                        </li>
+                    </ul>
+                    {% if not user %}
+                    <p class="main-gameclose__text-about">
+                        Our lottery consists of a grid containing 1000 squares. One of these squares hides the Apple logo behind it. Your task is to figure out where exactly this treasured logo is hidden and select the corresponding square. If you can find the Ell logo, you will be the winner and receive a <span>${{ cash }} prize!</span>
+                    </p>
+                    {% endif %}
+                    <div class="main-gameclose__timer">
+                        <p class="main-gameclose__timer-text">Next game starts</p>
+                        <span>{{ lastGame.created_at|date('d/m/Y')}}</span>
+                        <span>{{ lastGame.created_at|date("h:i A", "America/New_York")}} EST</span>
+                    </div>
+                </div>";s:4:"code";N;}}

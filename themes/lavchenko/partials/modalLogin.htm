@@ -1,5 +1,5 @@
 <div class="modal-content" id="modal-login">
-    <button class="closeModal-btn"></button>
+    <button class="closeModal-btn" data-fancybox-close></button>
     <h2 class="modal-content__title">Login</h2>
     <form class="modal-form form-login" method="post" data-request="onSignin">
         <div class="form-login__inner">
@@ -14,9 +14,9 @@
             </label>
             <a id="link-pass" data-fancybox data-src="#modal-forgotPass">Forgot password?</a>
         </div>
-        <div class="reg-log">
-            <a class="reg-link" data-fancybox data-src="#modal-reg" href='#'>Registration</a> / <a class="active">Login</a>
-        </div>
         <button class="modal-form__btn" type="submit">GO</button>
     </form>
+    <a class="modal-content__link" data-fancybox="reg" data-src="#modal-reg" href="#">
+            Haven`t registered yet? <span>To Register</span>
+        </a>
 </div>

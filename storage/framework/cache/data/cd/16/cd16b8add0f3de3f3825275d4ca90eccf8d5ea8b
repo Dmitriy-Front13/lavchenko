@@ -1,5 +1,5 @@
-1722860645a:1:{s:12:"modalReg.htm";a:5:{s:8:"fileName";s:12:"modalReg.htm";s:7:"content";s:1545:"<div class="modal-content" id="modal-reg">
-    <button class="closeModal-btn"></button>
+1725702050a:1:{s:12:"modalReg.htm";a:5:{s:8:"fileName";s:12:"modalReg.htm";s:7:"content";s:1626:"<div class="modal-content" id="modal-reg">
+    <button class="closeModal-btn" data-fancybox-close></button>
     <h2 class="modal-content__title">Registration</h2>
     <form class="modal-form form-reg" method="post" data-request="onRegister">
         <div class="form-reg__inner">
@@ -7,6 +7,7 @@
             <input class="modal-form__input" type="text" name="last_name" placeholder="Last name" required>
             <input class="modal-form__input" type="text" name="phone" placeholder="Phone" required>
             <input class="modal-form__input" type="email" name="email" placeholder="Your mail" required>
+            {% partial '@form-select-country' countryId=user.country_id %}
             <input class="modal-form__input" type="password" name="password" placeholder="Password" required>
             <input class="modal-form__input" type="password" name="password_confirmation" placeholder="Repeat password" required>
         </div>
@@ -17,13 +18,13 @@
                 <span class="modal-form__checkbox"></span>
             </label>
         </div>
-        <div class="reg-log">
-            <a class="active">Registration</a> / <a class="login-link" data-fancybox data-src="#modal-login" href="#">Login</a>
-        </div>
         <button class="modal-form__btn" type="submit">GO</button>
     </form>
-</div>";s:5:"mtime";i:1722726412;s:6:"markup";s:1545:"<div class="modal-content" id="modal-reg">
-    <button class="closeModal-btn"></button>
+    <a class="modal-content__link" data-fancybox="login" data-src="#modal-login" href="#">
+            Already have account? <span>Log in</span>
+        </a>
+</div>";s:5:"mtime";i:1724514060;s:6:"markup";s:1626:"<div class="modal-content" id="modal-reg">
+    <button class="closeModal-btn" data-fancybox-close></button>
     <h2 class="modal-content__title">Registration</h2>
     <form class="modal-form form-reg" method="post" data-request="onRegister">
         <div class="form-reg__inner">
@@ -31,6 +32,7 @@
             <input class="modal-form__input" type="text" name="last_name" placeholder="Last name" required>
             <input class="modal-form__input" type="text" name="phone" placeholder="Phone" required>
             <input class="modal-form__input" type="email" name="email" placeholder="Your mail" required>
+            {% partial '@form-select-country' countryId=user.country_id %}
             <input class="modal-form__input" type="password" name="password" placeholder="Password" required>
             <input class="modal-form__input" type="password" name="password_confirmation" placeholder="Repeat password" required>
         </div>
@@ -41,9 +43,9 @@
                 <span class="modal-form__checkbox"></span>
             </label>
         </div>
-        <div class="reg-log">
-            <a class="active">Registration</a> / <a class="login-link" data-fancybox data-src="#modal-login" href="#">Login</a>
-        </div>
         <button class="modal-form__btn" type="submit">GO</button>
     </form>
+    <a class="modal-content__link" data-fancybox="login" data-src="#modal-login" href="#">
+            Already have account? <span>Log in</span>
+        </a>
 </div>";s:4:"code";N;}}

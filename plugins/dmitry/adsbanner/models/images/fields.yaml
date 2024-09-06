@@ -1,0 +1,20 @@
+fields:
+    ads:
+        label: 'ads banner'
+        mode: image
+        imageWidth: '940'
+        imageHeight: '140'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    link:
+        label: 'Link banner'
+        span: auto
+        type: text
+    description:
+        label: Description
+        span: auto
+        type: textarea

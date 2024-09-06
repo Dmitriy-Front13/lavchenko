@@ -1,149 +1,84 @@
-1722878374a:1:{s:8:"home.htm";a:9:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:16820:"url = "/"
+1725702048a:1:{s:8:"home.htm";a:17:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:8772:"url = "/"
 layout = "default"
 title = "home"
 
+[bannerList]
+
 [gameComponent]
+
+[GameInfo]
+
+[Timer]
+
+[GameStats]
+
+[location]
+
+[resetPassword]
+
+[authentication]
+rememberMe = "ask"
+twoFactorAuth = 0
+recoverPassword = 1
+
+[GameWinner]
 ==
+{% set iconPath = icon.getPath() %}
 <header class="header">
-  <div class="container">
-      <div class="header__inner">
-          <a class="header__logo" href="#">
-              <img src="{{'assets/images/logo.png'| theme}}" alt="logo img">
-          </a>
-          <h3 class="header__title">Find the <img class="header__title-img" src="{{'assets/images/title-img.svg'| theme}}" alt="title-img">logo
-              and get $1,000</h3>
-              {% flash %}
-    <p class="flash header__title {{ type }}">{{ message }}</p>
-{% endflash %}
-        
-        {% if user %}
-    <button class="header__btn" data-request="onLogout" data-request-data="{'redirect': '/'}">Log out</button>
-{% else %}
-    <button class="header__btn" data-fancybox data-src="#modal-login">Play</button>
-{% endif %}
-      </div>
-  </div>
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="#">
+                <img src="{{'assets/images/logo.svg'| theme}}" alt="logo img">
+            </a>
+            {% if not isGameOver %}
+            <h3 class="header__title"><span class="header__title--gradient-first">Find the</span> <img
+                    class="header__title-img" src="{{ icon.getPath() }}" alt="title-img">logo
+                and get <span class="header__title--gradient-second">${{ cash }}</span>
+                </h3>
+                {% endif %}
+            {% if user %}
+            <a class="header__btn" href='account'>Profile</a>
+            {% else %}
+             <div class="header__box">
+                    <button class="header__login" data-fancybox data-src="#modal-login">Log in</button>
+                    <button class="header__sign" data-fancybox="reg" data-src="#modal-reg">Sign up</button>
+             </div>
+            {% endif %}
+        </div>
+    </div>
 </header>
 <main class="main">
-  <div class="container">
-      <div class="main-top">
-          <div class="main-top__search">
-              <input class="main-top__search-input" type="text" name="" id="" placeholder="search by number">
-              <button class="main-top__search-btn">
-                  <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M20.6542 19.1734L16.0425 14.5189C17.4253 12.7011 18.0708 10.4208 17.8483 8.14043C17.6257 5.86009 16.5517 3.75053 14.8441 2.2397C13.1364 0.728863 10.9231 -0.0701171 8.65304 0.00483388C6.38298 0.0797849 4.22616 1.02305 2.62013 2.6433C1.01409 4.26354 0.0790855 6.43942 0.00479151 8.72957C-0.0695025 11.0197 0.722474 13.2526 2.22006 14.9753C3.71765 16.698 5.80872 17.7816 8.06907 18.0061C10.3294 18.2306 12.5898 17.5794 14.3917 16.1844L19.0073 20.8418C19.1156 20.9511 19.2443 21.0379 19.386 21.097C19.5276 21.1562 19.6794 21.1867 19.8327 21.1867C19.986 21.1867 20.1378 21.1562 20.2794 21.097C20.421 21.0379 20.5497 20.9511 20.6581 20.8418C20.7665 20.7324 20.8525 20.6026 20.9111 20.4597C20.9698 20.3168 21 20.1637 21 20.009C21 19.8544 20.9698 19.7013 20.9111 19.5584C20.8525 19.4155 20.7665 19.2857 20.6581 19.1763L20.6542 19.1734ZM2.3502 9.03277C2.3502 7.71519 2.73748 6.42721 3.46307 5.33168C4.18866 4.23616 5.21997 3.3823 6.42658 2.87808C7.63319 2.37387 8.96092 2.24194 10.2418 2.49899C11.5228 2.75604 12.6994 3.39051 13.6229 4.32218C14.5464 5.25384 15.1753 6.44086 15.4301 7.73312C15.6849 9.02538 15.5541 10.3648 15.0543 11.5821C14.5545 12.7994 13.7082 13.8398 12.6222 14.5718C11.5363 15.3039 10.2596 15.6946 8.95359 15.6946C7.20282 15.6927 5.52426 14.9903 4.28628 13.7414C3.04829 12.4924 2.352 10.799 2.3502 9.03277Z"
-                          fill="white" />
-                  </svg>
-              </button>
-          </div>
-          <div class="main-top__attempts">
-              <h4 class="main-top__attempts-title">
-                  Your attempts:
-                  
-              </h4>
-              <div class="main-top__attempts-box">
-                  <span>1</span>
-                  <span>2</span>
-                  <span>3</span>
-              </div>
-          </div>
-          <div class="main-top__slider swiper mySwiper">
-              <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                      <img class="img1" src="{{'assets/images/sliderimg.png' | theme}}" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                      <img class="img1" src="{{'assets/images/sliderimg.png' | theme}}" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                      <img class="img1" src="{{'assets/images/sliderimg.png' | theme}}" alt="">
-                  </div>
-              </div>
-              <div class="swiper-pagination"></div>
-              <div class="next-prev">
-                  <div class="swiper-button-next">
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <g clip-path="url(#clip0_1181_173)">
-                              <rect width="22" height="22" rx="11" fill="#040404" />
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M1.375 11C1.375 13.5527 2.38906 16.0009 4.1941 17.8059C5.99913 19.6109 8.44729 20.625 11 20.625C13.5527 20.625 16.0009 19.6109 17.8059 17.8059C19.6109 16.0009 20.625 13.5527 20.625 11C20.625 8.44729 19.6109 5.99913 17.8059 4.1941C16.0009 2.38906 13.5527 1.375 11 1.375C8.44729 1.375 5.99913 2.38906 4.1941 4.1941C2.38906 5.99913 1.375 8.44729 1.375 11ZM22 11C22 13.9174 20.8411 16.7153 18.7782 18.7782C16.7153 20.8411 13.9174 22 11 22C8.08262 22 5.28473 20.8411 3.22183 18.7782C1.15893 16.7153 0 13.9174 0 11C0 8.08262 1.15893 5.28473 3.22183 3.22183C5.28473 1.15893 8.08262 0 11 0C13.9174 0 16.7153 1.15893 18.7782 3.22183C20.8411 5.28473 22 8.08262 22 11ZM6.1875 10.3125C6.00516 10.3125 5.8303 10.3849 5.70136 10.5139C5.57243 10.6428 5.5 10.8177 5.5 11C5.5 11.1823 5.57243 11.3572 5.70136 11.4861C5.8303 11.6151 6.00516 11.6875 6.1875 11.6875H14.1529L11.2008 14.6383C11.1368 14.7022 11.0861 14.7781 11.0515 14.8616C11.0169 14.9451 10.9991 15.0346 10.9991 15.125C10.9991 15.2154 11.0169 15.3049 11.0515 15.3884C11.0861 15.4719 11.1368 15.5478 11.2008 15.6117C11.2647 15.6757 11.3406 15.7264 11.4241 15.761C11.5076 15.7956 11.5971 15.8134 11.6875 15.8134C11.7779 15.8134 11.8674 15.7956 11.9509 15.761C12.0344 15.7264 12.1103 15.6757 12.1742 15.6117L16.2992 11.4867C16.3633 11.4229 16.4141 11.347 16.4487 11.2635C16.4834 11.18 16.5012 11.0904 16.5012 11C16.5012 10.9096 16.4834 10.82 16.4487 10.7365C16.4141 10.653 16.3633 10.5771 16.2992 10.5133L12.1742 6.38825C12.1103 6.32433 12.0344 6.27362 11.9509 6.23903C11.8674 6.20444 11.7779 6.18663 11.6875 6.18663C11.5971 6.18663 11.5076 6.20444 11.4241 6.23903C11.3406 6.27362 11.2647 6.32433 11.2008 6.38825C11.1368 6.45217 11.0861 6.52806 11.0515 6.61157C11.0169 6.69509 10.9991 6.7846 10.9991 6.875C10.9991 6.9654 11.0169 7.05491 11.0515 7.13843C11.0861 7.22194 11.1368 7.29783 11.2008 7.36175L14.1529 10.3125H6.1875Z"
-                                  fill="#EB09FF" />
-                          </g>
-                          <defs>
-                              <clipPath id="clip0_1181_173">
-                                  <rect width="22" height="22" rx="11" fill="white" />
-                              </clipPath>
-                          </defs>
-                      </svg>
-                  </div>
-                  <div class="swiper-button-prev">
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <g clip-path="url(#clip0_1181_175)">
-                              <rect width="22" height="22" rx="11" transform="matrix(-1 0 0 1 22 0)"
-                                  fill="#040404" />
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M20.625 11C20.625 13.5527 19.6109 16.0009 17.8059 17.8059C16.0009 19.6109 13.5527 20.625 11 20.625C8.44729 20.625 5.99914 19.6109 4.1941 17.8059C2.38906 16.0009 1.375 13.5527 1.375 11C1.375 8.44729 2.38906 5.99913 4.1941 4.1941C5.99914 2.38906 8.44729 1.375 11 1.375C13.5527 1.375 16.0009 2.38906 17.8059 4.1941C19.6109 5.99913 20.625 8.44729 20.625 11ZM0 11C0 13.9174 1.15892 16.7153 3.22182 18.7782C5.28473 20.8411 8.08262 22 11 22C13.9174 22 16.7153 20.8411 18.7782 18.7782C20.8411 16.7153 22 13.9174 22 11C22 8.08262 20.8411 5.28473 18.7782 3.22183C16.7153 1.15893 13.9174 0 11 0C8.08262 0 5.28473 1.15893 3.22182 3.22183C1.15892 5.28473 0 8.08262 0 11ZM15.8125 10.3125C15.9948 10.3125 16.1697 10.3849 16.2986 10.5139C16.4276 10.6428 16.5 10.8177 16.5 11C16.5 11.1823 16.4276 11.3572 16.2986 11.4861C16.1697 11.6151 15.9948 11.6875 15.8125 11.6875H7.84713L10.7992 14.6383C10.8632 14.7022 10.9139 14.7781 10.9485 14.8616C10.9831 14.9451 11.0009 15.0346 11.0009 15.125C11.0009 15.2154 10.9831 15.3049 10.9485 15.3884C10.9139 15.4719 10.8632 15.5478 10.7992 15.6117C10.7353 15.6757 10.6594 15.7264 10.5759 15.761C10.4924 15.7956 10.4029 15.8134 10.3125 15.8134C10.2221 15.8134 10.1326 15.7956 10.0491 15.761C9.96556 15.7264 9.88967 15.6757 9.82575 15.6117L5.70075 11.4867C5.63672 11.4229 5.58593 11.347 5.55127 11.2635C5.51661 11.18 5.49877 11.0904 5.49877 11C5.49877 10.9096 5.51661 10.82 5.55127 10.7365C5.58593 10.653 5.63672 10.5771 5.70075 10.5133L9.82575 6.38825C9.88967 6.32433 9.96556 6.27362 10.0491 6.23903C10.1326 6.20444 10.2221 6.18663 10.3125 6.18663C10.4029 6.18663 10.4924 6.20444 10.5759 6.23903C10.6594 6.27362 10.7353 6.32433 10.7992 6.38825C10.8632 6.45217 10.9139 6.52806 10.9485 6.61157C10.9831 6.69509 11.0009 6.7846 11.0009 6.875C11.0009 6.9654 10.9831 7.05491 10.9485 7.13843C10.9139 7.22194 10.8632 7.29783 10.7992 7.36175L7.84713 10.3125H15.8125Z"
-                                  fill="#EB09FF" />
-                          </g>
-                          <defs>
-                              <clipPath id="clip0_1181_175">
-                                  <rect width="22" height="22" rx="11" transform="matrix(-1 0 0 1 22 0)"
-                                      fill="white" />
-                              </clipPath>
-                          </defs>
-                      </svg>
-
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="main-cells">
-          <button class="btn-left">{{'assets/images/'| theme}}
-              <img src="{{'assets/images/btn-left.svg'| theme}}" alt="btn left">
-          </button>
-          <div class="main-cells__box">
-          {% if game %}
-        {% for cell in cells %}
-            <span class="game-cell"
-      data-request="onCheckNumber"
-      data-request-data="number: '{{ cell.number }}', game_id: '{{ game.id }}'"
-      data-request-success="alert('Number checked successfully!')"
-      data-request-error="alert('Error checking number!')">
-    {{ cell.number }}
-</span>
-        {% endfor %}
-    {% else %}
-        <p>No active game found.</p>
-    {% endif %}
-          </div>
-          <button class="btn-right">
-              <img src="{{'assets/images/btn-right.svg'| theme}}" alt="btn right">
-          </button>
-      </div>
-      <div class="main-bottom">
-          <div class="main-bottom__inner">
-              <p class="main-bottom__text">Opened cells: <span> 1</span> / 1.000</p>
-              <div class="number-pagination">
-                  <span class="active">1</span>
-                  <span>2</span>
-                  <span class="check">3</span>
-                  <span>4</span>
-                  <span>5</span>
-              </div>
-              <a class="main-bottom__share-link" href="#">
-                  <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M13.0071 0.636779L19.1678 6.59214C19.2274 6.64961 19.2748 6.71851 19.3072 6.79472C19.3396 6.87093 19.3563 6.9529 19.3563 7.03571C19.3563 7.11852 19.3396 7.20048 19.3072 7.2767C19.2748 7.35291 19.2274 7.42181 19.1678 7.47928L13.0071 13.4346C12.9508 13.4901 12.884 13.5339 12.8107 13.5635C12.7374 13.5931 12.659 13.608 12.5799 13.6071C12.4165 13.6071 12.2598 13.5422 12.1443 13.4267C12.0288 13.3112 11.9639 13.1545 11.9639 12.9911V9.91892C6.4603 10.1407 4.14387 13.2211 4.0453 13.3525C3.96687 13.4557 3.85863 13.5323 3.73521 13.572C3.6118 13.6117 3.47917 13.6125 3.3553 13.5743C3.23173 13.5345 3.1239 13.4566 3.04719 13.3519C2.97048 13.2472 2.92882 13.1209 2.92815 12.9911C2.92815 6.40321 8.34137 4.38249 11.9639 4.17714V1.08035C11.9641 0.959189 12.0001 0.840797 12.0673 0.739984C12.1345 0.639171 12.23 0.560414 12.3417 0.513565C12.4524 0.465852 12.5747 0.452092 12.6931 0.47403C12.8116 0.495968 12.9209 0.552615 13.0071 0.636779ZM4.36565 1.28571C3.33084 1.28571 2.3384 1.69679 1.60667 2.42851C0.874947 3.16024 0.463867 4.15268 0.463867 5.18749V14.6339C0.463867 15.6687 0.874947 16.6612 1.60667 17.3929C2.3384 18.1246 3.33084 18.5357 4.36565 18.5357H13.8121C14.8469 18.5357 15.8393 18.1246 16.5711 17.3929C17.3028 16.6612 17.7139 15.6687 17.7139 14.6339V14.2232C17.7139 14.0598 17.649 13.9031 17.5334 13.7876C17.4179 13.672 17.2612 13.6071 17.0978 13.6071C16.9344 13.6071 16.7777 13.672 16.6622 13.7876C16.5466 13.9031 16.4817 14.0598 16.4817 14.2232V14.6339C16.4817 15.342 16.2005 16.021 15.6998 16.5216C15.1992 17.0223 14.5201 17.3036 13.8121 17.3036H4.36565C3.65762 17.3036 2.97859 17.0223 2.47793 16.5216C1.97728 16.021 1.69601 15.342 1.69601 14.6339V5.18749C1.69601 4.47946 1.97728 3.80043 2.47793 3.29977C2.97859 2.79912 3.65762 2.51785 4.36565 2.51785H8.06208C8.22547 2.51785 8.38217 2.45294 8.49771 2.33741C8.61325 2.22187 8.67815 2.06517 8.67815 1.90178C8.67815 1.73839 8.61325 1.58169 8.49771 1.46615C8.38217 1.35062 8.22547 1.28571 8.06208 1.28571H4.36565Z"
-                      fill="#F8F8F8" />
-              </svg>
-              Share on Social Media
-          </a>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="main-top" id="main-top">
+            {% if (user and userAttempts < 3 and not isGameOver) or (not user and not isGameOver) %}
+            {% partial "game/game-serach" %}
+            {% endif %}
+            {% if isGameOver or userAttempts == 3 %}
+            {% partial "game/game-timer" %}
+            {% else %}
+            {% partial "game/game-attempts" %}
+            {% endif %}
+            {% partial "home/banner" %}
+        </div>
+        <div class="main-cells">
+        {% if isGameOver or userAttempts == 3 or (not user and isGameOver) %}
+        {% partial "game/gameclose" %}
+        {% endif %}
+            <div class="swiper-button-prev main-cells__btn btn-left" >
+                <img src="{{'assets/images/btn-left.svg'| theme}}" alt="btn left">
+            </div>
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper swiper-wrapper2">
+                    
+                </div>
+            </div>
+            <div class="swiper-button-next main-cells__btn btn-right">
+                <img src="{{'assets/images/btn-right.svg'| theme}}" alt="btn right">
+            </div>
+        </div>
+        {% partial "home/bottom" %}
+            
+    </div>
 </main>
 
 
@@ -152,247 +87,229 @@ title = "home"
 {% partial 'modalReg' %}
 {% partial 'modalPass' %}
 {% partial 'modal-mail' %}
-
-
+{% partial "modal-confEmail" %}
+<div class="modal-home" id="modal-adv" style="padding: 97px 51px 50px;">
+    <a class="closeModal-btn" href='/'></a>
+        <p>your application has been sent Wait for a response by email</p>
+        <a href="/">to Home Page</a>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Инициализация Fancybox
-        Fancybox.bind("[data-fancybox]", {
-            closeButton: false,
-            dragToClose: false,
-            closeExisting: true,
-            on: {
-                done: (fancybox) => {
-                    document.querySelectorAll('.closeModal-btn').forEach(e => {
-                        e.addEventListener('click', function () {
-                            Fancybox.close(); 
-                        });
-                    });
-                }
-            }
-        });
+function getCellsPerSlide() {
+    var screenWidth = window.innerWidth;
+    {% if isGameOver or userAttempts == 3 %}
+    {% if user %}
+    if (screenWidth <= 500) {
+        return 100;
+    } else {
+    return 300;
+    }
+    {% else %}
+    if (screenWidth <= 400) {
+        return 300; 
+    } else if (screenWidth <= 520) {
+        return 200; 
+    } else if (screenWidth <= 700) {
+        return 600; 
+    } else if (screenWidth <= 1200) {
+        return 500; 
+    } else {
+        return 400; 
+    }
+    {% endif %}
+    {% else %}
+    if (screenWidth <= 500) {
+        return 100; 
+    } else if (screenWidth <= 768) {
+        return 300; 
+    } else {
+        return 500; 
+    }
+    {% endif %}
+}
+        var slidesHTML = '';
+        var cellsPerSlide = getCellsPerSlide();
+        var currentSlideIndex = 0; 
 
-        // Проверка параметра showModal в URL
-        var urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('showModal') === 'true') {
-            // Открываем модальное окно с помощью Fancybox
-            Fancybox.show([{ src: '#modal-mail', type: 'inline' }]);
+        {% for cell in cells %}
+        if ({{ loop.index0 }} % cellsPerSlide === 0) {
+            slidesHTML += '<div class="swiper-slide main-cells__box">';
         }
-    });
+
+       slidesHTML += `<button class="game-cell {% if cell.isWinner %}special-class-653{% else %}{% if cell.isChosen %}special-class-326{% endif %}{% endif %}" data-number="{{ cell.number }}" data-game-id="{{ game.id }}" data-slide-index="${currentSlideIndex}">{% if cell.isWinner %}<img src="{{ icon.getPath() }}" alt="Winner">{% else %}{{ cell.number }}{% endif %}</button>`;
+
+
+        if ({{ loop.index0 }} % cellsPerSlide === cellsPerSlide - 1 || {{ loop.last ? 'true' : 'false' }}) {
+            slidesHTML += '</div>';
+            currentSlideIndex++;
+        }
+        {% endfor %}
+
+        document.querySelector('.swiper-wrapper2').innerHTML = slidesHTML;
 </script>
-
-
-
-  <script>
-      var swiper = new Swiper(".mySwiper", {
-          centeredSlides: true,
-          loop: true,
-          autoplay: {
-              delay: 5000,
-              disableOnInteraction: false,
-          },
-          pagination: {
-              el: ".swiper-pagination",
-          },
-          navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-          },
-      });
-  </script>
-
-
-  {# <script>
-const container = document.querySelector('.main-cells__box');
-
-function adjustFontSize(cell) {
-  const length = cell.textContent.length;
-  const cellSize = parseFloat(getComputedStyle(container).getPropertyValue('--cell-size')); // Получаем текущий размер клетки
-  let baseFontSize = cellSize * 0.4; // Базовый размер шрифта как 40% от размера клетки
-  let fontSize;
-
-  if (length < 3) {
-      fontSize = baseFontSize; // Базовый размер шрифта
-  } else if (length === 3) {
-      fontSize = baseFontSize * 0.9; // Уменьшаем шрифт для трехзначных чисел
-  } else {
-      fontSize = baseFontSize * 0.8; // Ещё меньше для чисел с четырьмя и более цифрами
-  }
+<script src="{{ 'assets/js/swiper.js' | theme }}"></script>
+<script src="{{ 'assets/js/main.js' | theme }}"></script>
+<script>
+var iconPath = "{{ iconPath }}";
+function updateButtonState(button, state) {
+        if (state === 'winner') {
+            button.addClass('special-class-653').prop('disabled', true).html(`<img src="${iconPath}" alt="Winner">`);
+        } else if (state === 'chosen') {
+            button.addClass('special-class-326').prop('disabled', true);
   
-  cell.style.fontSize = `${fontSize}px`; // Применяем размер шрифта в пикселях
-}
-
-function adjustSize() {
-  const width = container.offsetWidth;
-  const columns = 25;
-  const gridGap = 8;
-  const availableWidth = width - gridGap * (columns - 1);
-  const calculatedSize = availableWidth / columns;
-  container.style.setProperty('--cell-size', `${calculatedSize}px`);
-  Array.from(container.children).forEach(adjustFontSize);
-}
-
-
-
-// Создание клеток
-for (let i = 1; i <= 100; i++) {
-  const cell = document.createElement('span');
-  cell.classList.add('cell');
-  cell.textContent = i;
-  container.appendChild(cell);
-  adjustFontSize(cell); // Применяем настройку шрифта
-}
-
-container.lastChild.textContent = 'K1';
-adjustFontSize(container.lastChild); // Обновляем последнюю клетку
-
-window.onload = adjustSize;
-window.onresize = adjustSize;
-
-
-  </script> #}";s:5:"mtime";i:1722791971;s:6:"markup";s:16750:"<header class="header">
-  <div class="container">
-      <div class="header__inner">
-          <a class="header__logo" href="#">
-              <img src="{{'assets/images/logo.png'| theme}}" alt="logo img">
-          </a>
-          <h3 class="header__title">Find the <img class="header__title-img" src="{{'assets/images/title-img.svg'| theme}}" alt="title-img">logo
-              and get $1,000</h3>
-              {% flash %}
-    <p class="flash header__title {{ type }}">{{ message }}</p>
-{% endflash %}
-        
-        {% if user %}
-    <button class="header__btn" data-request="onLogout" data-request-data="{'redirect': '/'}">Log out</button>
-{% else %}
-    <button class="header__btn" data-fancybox data-src="#modal-login">Play</button>
+        }
+        var attempts = $('.no').length;
+        if (attempts >= 3) {
+            disableAllButtons();
+            openInfoModal();
+        }
+    }
+</script>
+<script src="{{ 'assets/js/game.js' | theme }}"></script>
+ {% if this.session.has('showModal') %}
+     <script>
+        $(document).ready(function() {
+            Fancybox.show([{
+                src  : '#modal-confEmail', 
+                type : 'inline',
+                closeButton: false,
+                dragToClose: false,
+                closeExisting: true
+            }]);
+        });
+    </script>
+     {% do this.session.forget('showModal') %}
 {% endif %}
-      </div>
-  </div>
+
+{% if this.session.has('registerModal') %}
+<script>
+$(document).ready(function() {
+Fancybox.show([{
+          src: '#modal-mail',
+          type: 'inline',
+          closeButton: false,
+          dragToClose: false,
+          closeExisting: true
+      }]);
+});
+</script>
+{% do this.session.forget('registerModal') %}
+{% endif %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Функция для получения параметра из URL
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    const resetParam = getParameterByName('reset');
+    if (resetParam) {
+Fancybox.show([{
+          src: '#modal-mail',
+          type: 'inline',
+          closeButton: false,
+          dragToClose: false,
+          closeExisting: true
+      }]);
+    }
+});
+</script>
+{% if isGameOver or userAttempts == 3 %}
+<script>
+    // Получаем дату дедлайна из Twig
+    const deadline = new Date("{{ lastGame.created_at|date("Y-m-d H:i:s") }}").getTime();
+
+    // Обновление таймера каждую секунду
+    const timer = setInterval(function() {
+
+        // Текущее время
+        const now = new Date().getTime();
+
+        // Разница между дедлайном и текущим временем
+        const timeLeft = deadline - now;
+
+        // Расчёт времени
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Выводим результат в элемент с id="countdown"
+        document.getElementById("mainTopTimer").innerHTML = days + "d" + ":" + hours + "h" + ":"
+        + minutes + "m" + ":" + seconds + "s";
+
+        // Если таймер достиг нуля, то
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            document.getElementById("mainTopTimer").innerHTML = "Game start!";
+        }
+    }, 1000);
+</script>
+{% endif %}
+<script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.min.js"></script>";s:5:"mtime";i:1725312634;s:6:"markup";s:8517:"{% set iconPath = icon.getPath() %}
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="header__logo" href="#">
+                <img src="{{'assets/images/logo.svg'| theme}}" alt="logo img">
+            </a>
+            {% if not isGameOver %}
+            <h3 class="header__title"><span class="header__title--gradient-first">Find the</span> <img
+                    class="header__title-img" src="{{ icon.getPath() }}" alt="title-img">logo
+                and get <span class="header__title--gradient-second">${{ cash }}</span>
+                </h3>
+                {% endif %}
+            {% if user %}
+            <a class="header__btn" href='account'>Profile</a>
+            {% else %}
+             <div class="header__box">
+                    <button class="header__login" data-fancybox data-src="#modal-login">Log in</button>
+                    <button class="header__sign" data-fancybox="reg" data-src="#modal-reg">Sign up</button>
+             </div>
+            {% endif %}
+        </div>
+    </div>
 </header>
 <main class="main">
-  <div class="container">
-      <div class="main-top">
-          <div class="main-top__search">
-              <input class="main-top__search-input" type="text" name="" id="" placeholder="search by number">
-              <button class="main-top__search-btn">
-                  <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M20.6542 19.1734L16.0425 14.5189C17.4253 12.7011 18.0708 10.4208 17.8483 8.14043C17.6257 5.86009 16.5517 3.75053 14.8441 2.2397C13.1364 0.728863 10.9231 -0.0701171 8.65304 0.00483388C6.38298 0.0797849 4.22616 1.02305 2.62013 2.6433C1.01409 4.26354 0.0790855 6.43942 0.00479151 8.72957C-0.0695025 11.0197 0.722474 13.2526 2.22006 14.9753C3.71765 16.698 5.80872 17.7816 8.06907 18.0061C10.3294 18.2306 12.5898 17.5794 14.3917 16.1844L19.0073 20.8418C19.1156 20.9511 19.2443 21.0379 19.386 21.097C19.5276 21.1562 19.6794 21.1867 19.8327 21.1867C19.986 21.1867 20.1378 21.1562 20.2794 21.097C20.421 21.0379 20.5497 20.9511 20.6581 20.8418C20.7665 20.7324 20.8525 20.6026 20.9111 20.4597C20.9698 20.3168 21 20.1637 21 20.009C21 19.8544 20.9698 19.7013 20.9111 19.5584C20.8525 19.4155 20.7665 19.2857 20.6581 19.1763L20.6542 19.1734ZM2.3502 9.03277C2.3502 7.71519 2.73748 6.42721 3.46307 5.33168C4.18866 4.23616 5.21997 3.3823 6.42658 2.87808C7.63319 2.37387 8.96092 2.24194 10.2418 2.49899C11.5228 2.75604 12.6994 3.39051 13.6229 4.32218C14.5464 5.25384 15.1753 6.44086 15.4301 7.73312C15.6849 9.02538 15.5541 10.3648 15.0543 11.5821C14.5545 12.7994 13.7082 13.8398 12.6222 14.5718C11.5363 15.3039 10.2596 15.6946 8.95359 15.6946C7.20282 15.6927 5.52426 14.9903 4.28628 13.7414C3.04829 12.4924 2.352 10.799 2.3502 9.03277Z"
-                          fill="white" />
-                  </svg>
-              </button>
-          </div>
-          <div class="main-top__attempts">
-              <h4 class="main-top__attempts-title">
-                  Your attempts:
-                  
-              </h4>
-              <div class="main-top__attempts-box">
-                  <span>1</span>
-                  <span>2</span>
-                  <span>3</span>
-              </div>
-          </div>
-          <div class="main-top__slider swiper mySwiper">
-              <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                      <img class="img1" src="{{'assets/images/sliderimg.png' | theme}}" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                      <img class="img1" src="{{'assets/images/sliderimg.png' | theme}}" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                      <img class="img1" src="{{'assets/images/sliderimg.png' | theme}}" alt="">
-                  </div>
-              </div>
-              <div class="swiper-pagination"></div>
-              <div class="next-prev">
-                  <div class="swiper-button-next">
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <g clip-path="url(#clip0_1181_173)">
-                              <rect width="22" height="22" rx="11" fill="#040404" />
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M1.375 11C1.375 13.5527 2.38906 16.0009 4.1941 17.8059C5.99913 19.6109 8.44729 20.625 11 20.625C13.5527 20.625 16.0009 19.6109 17.8059 17.8059C19.6109 16.0009 20.625 13.5527 20.625 11C20.625 8.44729 19.6109 5.99913 17.8059 4.1941C16.0009 2.38906 13.5527 1.375 11 1.375C8.44729 1.375 5.99913 2.38906 4.1941 4.1941C2.38906 5.99913 1.375 8.44729 1.375 11ZM22 11C22 13.9174 20.8411 16.7153 18.7782 18.7782C16.7153 20.8411 13.9174 22 11 22C8.08262 22 5.28473 20.8411 3.22183 18.7782C1.15893 16.7153 0 13.9174 0 11C0 8.08262 1.15893 5.28473 3.22183 3.22183C5.28473 1.15893 8.08262 0 11 0C13.9174 0 16.7153 1.15893 18.7782 3.22183C20.8411 5.28473 22 8.08262 22 11ZM6.1875 10.3125C6.00516 10.3125 5.8303 10.3849 5.70136 10.5139C5.57243 10.6428 5.5 10.8177 5.5 11C5.5 11.1823 5.57243 11.3572 5.70136 11.4861C5.8303 11.6151 6.00516 11.6875 6.1875 11.6875H14.1529L11.2008 14.6383C11.1368 14.7022 11.0861 14.7781 11.0515 14.8616C11.0169 14.9451 10.9991 15.0346 10.9991 15.125C10.9991 15.2154 11.0169 15.3049 11.0515 15.3884C11.0861 15.4719 11.1368 15.5478 11.2008 15.6117C11.2647 15.6757 11.3406 15.7264 11.4241 15.761C11.5076 15.7956 11.5971 15.8134 11.6875 15.8134C11.7779 15.8134 11.8674 15.7956 11.9509 15.761C12.0344 15.7264 12.1103 15.6757 12.1742 15.6117L16.2992 11.4867C16.3633 11.4229 16.4141 11.347 16.4487 11.2635C16.4834 11.18 16.5012 11.0904 16.5012 11C16.5012 10.9096 16.4834 10.82 16.4487 10.7365C16.4141 10.653 16.3633 10.5771 16.2992 10.5133L12.1742 6.38825C12.1103 6.32433 12.0344 6.27362 11.9509 6.23903C11.8674 6.20444 11.7779 6.18663 11.6875 6.18663C11.5971 6.18663 11.5076 6.20444 11.4241 6.23903C11.3406 6.27362 11.2647 6.32433 11.2008 6.38825C11.1368 6.45217 11.0861 6.52806 11.0515 6.61157C11.0169 6.69509 10.9991 6.7846 10.9991 6.875C10.9991 6.9654 11.0169 7.05491 11.0515 7.13843C11.0861 7.22194 11.1368 7.29783 11.2008 7.36175L14.1529 10.3125H6.1875Z"
-                                  fill="#EB09FF" />
-                          </g>
-                          <defs>
-                              <clipPath id="clip0_1181_173">
-                                  <rect width="22" height="22" rx="11" fill="white" />
-                              </clipPath>
-                          </defs>
-                      </svg>
-                  </div>
-                  <div class="swiper-button-prev">
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <g clip-path="url(#clip0_1181_175)">
-                              <rect width="22" height="22" rx="11" transform="matrix(-1 0 0 1 22 0)"
-                                  fill="#040404" />
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M20.625 11C20.625 13.5527 19.6109 16.0009 17.8059 17.8059C16.0009 19.6109 13.5527 20.625 11 20.625C8.44729 20.625 5.99914 19.6109 4.1941 17.8059C2.38906 16.0009 1.375 13.5527 1.375 11C1.375 8.44729 2.38906 5.99913 4.1941 4.1941C5.99914 2.38906 8.44729 1.375 11 1.375C13.5527 1.375 16.0009 2.38906 17.8059 4.1941C19.6109 5.99913 20.625 8.44729 20.625 11ZM0 11C0 13.9174 1.15892 16.7153 3.22182 18.7782C5.28473 20.8411 8.08262 22 11 22C13.9174 22 16.7153 20.8411 18.7782 18.7782C20.8411 16.7153 22 13.9174 22 11C22 8.08262 20.8411 5.28473 18.7782 3.22183C16.7153 1.15893 13.9174 0 11 0C8.08262 0 5.28473 1.15893 3.22182 3.22183C1.15892 5.28473 0 8.08262 0 11ZM15.8125 10.3125C15.9948 10.3125 16.1697 10.3849 16.2986 10.5139C16.4276 10.6428 16.5 10.8177 16.5 11C16.5 11.1823 16.4276 11.3572 16.2986 11.4861C16.1697 11.6151 15.9948 11.6875 15.8125 11.6875H7.84713L10.7992 14.6383C10.8632 14.7022 10.9139 14.7781 10.9485 14.8616C10.9831 14.9451 11.0009 15.0346 11.0009 15.125C11.0009 15.2154 10.9831 15.3049 10.9485 15.3884C10.9139 15.4719 10.8632 15.5478 10.7992 15.6117C10.7353 15.6757 10.6594 15.7264 10.5759 15.761C10.4924 15.7956 10.4029 15.8134 10.3125 15.8134C10.2221 15.8134 10.1326 15.7956 10.0491 15.761C9.96556 15.7264 9.88967 15.6757 9.82575 15.6117L5.70075 11.4867C5.63672 11.4229 5.58593 11.347 5.55127 11.2635C5.51661 11.18 5.49877 11.0904 5.49877 11C5.49877 10.9096 5.51661 10.82 5.55127 10.7365C5.58593 10.653 5.63672 10.5771 5.70075 10.5133L9.82575 6.38825C9.88967 6.32433 9.96556 6.27362 10.0491 6.23903C10.1326 6.20444 10.2221 6.18663 10.3125 6.18663C10.4029 6.18663 10.4924 6.20444 10.5759 6.23903C10.6594 6.27362 10.7353 6.32433 10.7992 6.38825C10.8632 6.45217 10.9139 6.52806 10.9485 6.61157C10.9831 6.69509 11.0009 6.7846 11.0009 6.875C11.0009 6.9654 10.9831 7.05491 10.9485 7.13843C10.9139 7.22194 10.8632 7.29783 10.7992 7.36175L7.84713 10.3125H15.8125Z"
-                                  fill="#EB09FF" />
-                          </g>
-                          <defs>
-                              <clipPath id="clip0_1181_175">
-                                  <rect width="22" height="22" rx="11" transform="matrix(-1 0 0 1 22 0)"
-                                      fill="white" />
-                              </clipPath>
-                          </defs>
-                      </svg>
-
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="main-cells">
-          <button class="btn-left">{{'assets/images/'| theme}}
-              <img src="{{'assets/images/btn-left.svg'| theme}}" alt="btn left">
-          </button>
-          <div class="main-cells__box">
-          {% if game %}
-        {% for cell in cells %}
-            <span class="game-cell"
-      data-request="onCheckNumber"
-      data-request-data="number: '{{ cell.number }}', game_id: '{{ game.id }}'"
-      data-request-success="alert('Number checked successfully!')"
-      data-request-error="alert('Error checking number!')">
-    {{ cell.number }}
-</span>
-        {% endfor %}
-    {% else %}
-        <p>No active game found.</p>
-    {% endif %}
-          </div>
-          <button class="btn-right">
-              <img src="{{'assets/images/btn-right.svg'| theme}}" alt="btn right">
-          </button>
-      </div>
-      <div class="main-bottom">
-          <div class="main-bottom__inner">
-              <p class="main-bottom__text">Opened cells: <span> 1</span> / 1.000</p>
-              <div class="number-pagination">
-                  <span class="active">1</span>
-                  <span>2</span>
-                  <span class="check">3</span>
-                  <span>4</span>
-                  <span>5</span>
-              </div>
-              <a class="main-bottom__share-link" href="#">
-                  <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M13.0071 0.636779L19.1678 6.59214C19.2274 6.64961 19.2748 6.71851 19.3072 6.79472C19.3396 6.87093 19.3563 6.9529 19.3563 7.03571C19.3563 7.11852 19.3396 7.20048 19.3072 7.2767C19.2748 7.35291 19.2274 7.42181 19.1678 7.47928L13.0071 13.4346C12.9508 13.4901 12.884 13.5339 12.8107 13.5635C12.7374 13.5931 12.659 13.608 12.5799 13.6071C12.4165 13.6071 12.2598 13.5422 12.1443 13.4267C12.0288 13.3112 11.9639 13.1545 11.9639 12.9911V9.91892C6.4603 10.1407 4.14387 13.2211 4.0453 13.3525C3.96687 13.4557 3.85863 13.5323 3.73521 13.572C3.6118 13.6117 3.47917 13.6125 3.3553 13.5743C3.23173 13.5345 3.1239 13.4566 3.04719 13.3519C2.97048 13.2472 2.92882 13.1209 2.92815 12.9911C2.92815 6.40321 8.34137 4.38249 11.9639 4.17714V1.08035C11.9641 0.959189 12.0001 0.840797 12.0673 0.739984C12.1345 0.639171 12.23 0.560414 12.3417 0.513565C12.4524 0.465852 12.5747 0.452092 12.6931 0.47403C12.8116 0.495968 12.9209 0.552615 13.0071 0.636779ZM4.36565 1.28571C3.33084 1.28571 2.3384 1.69679 1.60667 2.42851C0.874947 3.16024 0.463867 4.15268 0.463867 5.18749V14.6339C0.463867 15.6687 0.874947 16.6612 1.60667 17.3929C2.3384 18.1246 3.33084 18.5357 4.36565 18.5357H13.8121C14.8469 18.5357 15.8393 18.1246 16.5711 17.3929C17.3028 16.6612 17.7139 15.6687 17.7139 14.6339V14.2232C17.7139 14.0598 17.649 13.9031 17.5334 13.7876C17.4179 13.672 17.2612 13.6071 17.0978 13.6071C16.9344 13.6071 16.7777 13.672 16.6622 13.7876C16.5466 13.9031 16.4817 14.0598 16.4817 14.2232V14.6339C16.4817 15.342 16.2005 16.021 15.6998 16.5216C15.1992 17.0223 14.5201 17.3036 13.8121 17.3036H4.36565C3.65762 17.3036 2.97859 17.0223 2.47793 16.5216C1.97728 16.021 1.69601 15.342 1.69601 14.6339V5.18749C1.69601 4.47946 1.97728 3.80043 2.47793 3.29977C2.97859 2.79912 3.65762 2.51785 4.36565 2.51785H8.06208C8.22547 2.51785 8.38217 2.45294 8.49771 2.33741C8.61325 2.22187 8.67815 2.06517 8.67815 1.90178C8.67815 1.73839 8.61325 1.58169 8.49771 1.46615C8.38217 1.35062 8.22547 1.28571 8.06208 1.28571H4.36565Z"
-                      fill="#F8F8F8" />
-              </svg>
-              Share on Social Media
-          </a>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="main-top" id="main-top">
+            {% if (user and userAttempts < 3 and not isGameOver) or (not user and not isGameOver) %}
+            {% partial "game/game-serach" %}
+            {% endif %}
+            {% if isGameOver or userAttempts == 3 %}
+            {% partial "game/game-timer" %}
+            {% else %}
+            {% partial "game/game-attempts" %}
+            {% endif %}
+            {% partial "home/banner" %}
+        </div>
+        <div class="main-cells">
+        {% if isGameOver or userAttempts == 3 or (not user and isGameOver) %}
+        {% partial "game/gameclose" %}
+        {% endif %}
+            <div class="swiper-button-prev main-cells__btn btn-left" >
+                <img src="{{'assets/images/btn-left.svg'| theme}}" alt="btn left">
+            </div>
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper swiper-wrapper2">
+                    
+                </div>
+            </div>
+            <div class="swiper-button-next main-cells__btn btn-right">
+                <img src="{{'assets/images/btn-right.svg'| theme}}" alt="btn right">
+            </div>
+        </div>
+        {% partial "home/bottom" %}
+            
+    </div>
 </main>
 
 
@@ -401,105 +318,171 @@ window.onresize = adjustSize;
 {% partial 'modalReg' %}
 {% partial 'modalPass' %}
 {% partial 'modal-mail' %}
-
-
+{% partial "modal-confEmail" %}
+<div class="modal-home" id="modal-adv" style="padding: 97px 51px 50px;">
+    <a class="closeModal-btn" href='/'></a>
+        <p>your application has been sent Wait for a response by email</p>
+        <a href="/">to Home Page</a>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Инициализация Fancybox
-        Fancybox.bind("[data-fancybox]", {
-            closeButton: false,
-            dragToClose: false,
-            closeExisting: true,
-            on: {
-                done: (fancybox) => {
-                    document.querySelectorAll('.closeModal-btn').forEach(e => {
-                        e.addEventListener('click', function () {
-                            Fancybox.close(); 
-                        });
-                    });
-                }
-            }
-        });
+function getCellsPerSlide() {
+    var screenWidth = window.innerWidth;
+    {% if isGameOver or userAttempts == 3 %}
+    {% if user %}
+    if (screenWidth <= 500) {
+        return 100;
+    } else {
+    return 300;
+    }
+    {% else %}
+    if (screenWidth <= 400) {
+        return 300; 
+    } else if (screenWidth <= 520) {
+        return 200; 
+    } else if (screenWidth <= 700) {
+        return 600; 
+    } else if (screenWidth <= 1200) {
+        return 500; 
+    } else {
+        return 400; 
+    }
+    {% endif %}
+    {% else %}
+    if (screenWidth <= 500) {
+        return 100; 
+    } else if (screenWidth <= 768) {
+        return 300; 
+    } else {
+        return 500; 
+    }
+    {% endif %}
+}
+        var slidesHTML = '';
+        var cellsPerSlide = getCellsPerSlide();
+        var currentSlideIndex = 0; 
 
-        // Проверка параметра showModal в URL
-        var urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('showModal') === 'true') {
-            // Открываем модальное окно с помощью Fancybox
-            Fancybox.show([{ src: '#modal-mail', type: 'inline' }]);
+        {% for cell in cells %}
+        if ({{ loop.index0 }} % cellsPerSlide === 0) {
+            slidesHTML += '<div class="swiper-slide main-cells__box">';
         }
-    });
+
+       slidesHTML += `<button class="game-cell {% if cell.isWinner %}special-class-653{% else %}{% if cell.isChosen %}special-class-326{% endif %}{% endif %}" data-number="{{ cell.number }}" data-game-id="{{ game.id }}" data-slide-index="${currentSlideIndex}">{% if cell.isWinner %}<img src="{{ icon.getPath() }}" alt="Winner">{% else %}{{ cell.number }}{% endif %}</button>`;
+
+
+        if ({{ loop.index0 }} % cellsPerSlide === cellsPerSlide - 1 || {{ loop.last ? 'true' : 'false' }}) {
+            slidesHTML += '</div>';
+            currentSlideIndex++;
+        }
+        {% endfor %}
+
+        document.querySelector('.swiper-wrapper2').innerHTML = slidesHTML;
 </script>
-
-
-
-  <script>
-      var swiper = new Swiper(".mySwiper", {
-          centeredSlides: true,
-          loop: true,
-          autoplay: {
-              delay: 5000,
-              disableOnInteraction: false,
-          },
-          pagination: {
-              el: ".swiper-pagination",
-          },
-          navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-          },
-      });
-  </script>
-
-
-  {# <script>
-const container = document.querySelector('.main-cells__box');
-
-function adjustFontSize(cell) {
-  const length = cell.textContent.length;
-  const cellSize = parseFloat(getComputedStyle(container).getPropertyValue('--cell-size')); // Получаем текущий размер клетки
-  let baseFontSize = cellSize * 0.4; // Базовый размер шрифта как 40% от размера клетки
-  let fontSize;
-
-  if (length < 3) {
-      fontSize = baseFontSize; // Базовый размер шрифта
-  } else if (length === 3) {
-      fontSize = baseFontSize * 0.9; // Уменьшаем шрифт для трехзначных чисел
-  } else {
-      fontSize = baseFontSize * 0.8; // Ещё меньше для чисел с четырьмя и более цифрами
-  }
+<script src="{{ 'assets/js/swiper.js' | theme }}"></script>
+<script src="{{ 'assets/js/main.js' | theme }}"></script>
+<script>
+var iconPath = "{{ iconPath }}";
+function updateButtonState(button, state) {
+        if (state === 'winner') {
+            button.addClass('special-class-653').prop('disabled', true).html(`<img src="${iconPath}" alt="Winner">`);
+        } else if (state === 'chosen') {
+            button.addClass('special-class-326').prop('disabled', true);
   
-  cell.style.fontSize = `${fontSize}px`; // Применяем размер шрифта в пикселях
-}
+        }
+        var attempts = $('.no').length;
+        if (attempts >= 3) {
+            disableAllButtons();
+            openInfoModal();
+        }
+    }
+</script>
+<script src="{{ 'assets/js/game.js' | theme }}"></script>
+ {% if this.session.has('showModal') %}
+     <script>
+        $(document).ready(function() {
+            Fancybox.show([{
+                src  : '#modal-confEmail', 
+                type : 'inline',
+                closeButton: false,
+                dragToClose: false,
+                closeExisting: true
+            }]);
+        });
+    </script>
+     {% do this.session.forget('showModal') %}
+{% endif %}
 
-function adjustSize() {
-  const width = container.offsetWidth;
-  const columns = 25;
-  const gridGap = 8;
-  const availableWidth = width - gridGap * (columns - 1);
-  const calculatedSize = availableWidth / columns;
-  container.style.setProperty('--cell-size', `${calculatedSize}px`);
-  Array.from(container.children).forEach(adjustFontSize);
-}
+{% if this.session.has('registerModal') %}
+<script>
+$(document).ready(function() {
+Fancybox.show([{
+          src: '#modal-mail',
+          type: 'inline',
+          closeButton: false,
+          dragToClose: false,
+          closeExisting: true
+      }]);
+});
+</script>
+{% do this.session.forget('registerModal') %}
+{% endif %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Функция для получения параметра из URL
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    const resetParam = getParameterByName('reset');
+    if (resetParam) {
+Fancybox.show([{
+          src: '#modal-mail',
+          type: 'inline',
+          closeButton: false,
+          dragToClose: false,
+          closeExisting: true
+      }]);
+    }
+});
+</script>
+{% if isGameOver or userAttempts == 3 %}
+<script>
+    // Получаем дату дедлайна из Twig
+    const deadline = new Date("{{ lastGame.created_at|date("Y-m-d H:i:s") }}").getTime();
 
+    // Обновление таймера каждую секунду
+    const timer = setInterval(function() {
 
+        // Текущее время
+        const now = new Date().getTime();
 
-// Создание клеток
-for (let i = 1; i <= 100; i++) {
-  const cell = document.createElement('span');
-  cell.classList.add('cell');
-  cell.textContent = i;
-  container.appendChild(cell);
-  adjustFontSize(cell); // Применяем настройку шрифта
-}
+        // Разница между дедлайном и текущим временем
+        const timeLeft = deadline - now;
 
-container.lastChild.textContent = 'K1';
-adjustFontSize(container.lastChild); // Обновляем последнюю клетку
+        // Расчёт времени
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-window.onload = adjustSize;
-window.onresize = adjustSize;
+        // Выводим результат в элемент с id="countdown"
+        document.getElementById("mainTopTimer").innerHTML = days + "d" + ":" + hours + "h" + ":"
+        + minutes + "m" + ":" + seconds + "s";
 
-
-  </script> #}";s:4:"code";N;s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:5:"title";s:4:"home";s:13:"gameComponent";a:0:{}}}
+        // Если таймер достиг нуля, то
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            document.getElementById("mainTopTimer").innerHTML = "Game start!";
+        }
+    }, 1000);
+</script>
+{% endif %}
+<script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.min.js"></script>";s:4:"code";N;s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:5:"title";s:4:"home";s:10:"bannerList";a:0:{}s:13:"gameComponent";a:0:{}s:8:"GameInfo";a:0:{}s:5:"Timer";a:0:{}s:9:"GameStats";a:0:{}s:8:"location";a:0:{}s:13:"resetPassword";a:0:{}s:14:"authentication";a:3:{s:10:"rememberMe";s:3:"ask";s:13:"twoFactorAuth";s:1:"0";s:15:"recoverPassword";s:1:"1";}s:10:"GameWinner";a:0:{}}}

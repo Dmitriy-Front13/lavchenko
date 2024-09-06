@@ -1,0 +1,19 @@
+1725397479a:1:{s:15:"forum/topic.htm";a:12:{s:8:"fileName";s:15:"forum/topic.htm";s:7:"content";s:348:"##
+title = "Forum Topic"
+url = "/forum/topic/:slug"
+layout = "default"
+description = "Viewing a single forum discussion topic."
+hidden = "0"
+
+[resources]
+vars[activeNavLink] = 'forum'
+
+[forumTopic]
+slug = "{{ :slug }}"
+postsPerPage = "20"
+memberPage = "404"
+channelPage = "forum/channel"
+memberPage = "forum/member"
+==
+{% component 'forumTopic' %}
+";s:5:"mtime";i:1714945456;s:6:"markup";s:28:"{% component 'forumTopic' %}";s:4:"code";N;s:5:"title";s:11:"Forum Topic";s:3:"url";s:18:"/forum/topic/:slug";s:6:"layout";s:7:"default";s:11:"description";s:40:"Viewing a single forum discussion topic.";s:6:"hidden";s:1:"0";s:9:"resources";a:1:{s:4:"vars";a:1:{s:13:"activeNavLink";s:5:"forum";}}s:10:"forumTopic";a:4:{s:4:"slug";s:11:"{{ :slug }}";s:12:"postsPerPage";s:2:"20";s:10:"memberPage";s:12:"forum/member";s:11:"channelPage";s:13:"forum/channel";}}}

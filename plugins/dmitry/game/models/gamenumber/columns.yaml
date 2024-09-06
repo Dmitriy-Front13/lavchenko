@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: false
+    game_id:
+        label: game_id
+        type: number
+        searchable: true
+        sortable: true
+    number:
+        label: number
+        type: number
+        searchable: true
+    status:
+        label: status
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        type: number
+        sortable: true
+        select: email
+        relation: user

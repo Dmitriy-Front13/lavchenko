@@ -1,0 +1,35 @@
+<form method="post"
+    class="account-editor"
+    data-request="onUpdateProfile"
+    data-request-update="{ _self: true}"
+    data-request-files>
+{% if user.avatar %}
+<label class="profile__userpic-label">
+            <input class="profile__userpic-input" 
+            id="avatarInput"
+            type="file"
+            name="avatar"
+            accept=".jpg,.jpeg,.bmp,.png,.webp,.gif"
+            hidden disabled>
+            <img
+            src="{{ user.getAvatarThumb(128) }}"
+            id='avatarPreview'
+            alt="Profile Picture" >
+            </label>
+            {% else %}
+            <label class="profile__userpic-label">
+            <input class="profile__userpic-input" 
+            id="avatarInput"
+            type="file"
+            name="avatar"
+            accept=".jpg,.jpeg,.bmp,.png,.webp,.gif"
+            hidden disabled> 
+            <img src="{{ 'assets/images/userpic.svg' | theme }}" alt="" id='avatarPreview'>
+          </label>
+            {% endif %}
+            <button
+            type="submit"
+            style='height: 0; font-size: 0; border: none; padding: 0;'
+            id="btn-save-userpic"
+            >Save</button>
+            </form>

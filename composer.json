@@ -13,7 +13,9 @@
         "rainlab/userplus-plugin": "^2.0",
         "rainlab/location-plugin": "^2.0",
         "rainlab/user-plugin": "^3.1",
-        "rainlab/builder-plugin": "^2.0"
+        "rainlab/builder-plugin": "^2.0",
+        "blakejones/magicforms-plugin": "^1.6",
+        "gromit/oc-forms-plugin": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5|^9.0"

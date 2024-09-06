@@ -1,0 +1,8 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'add table phone and country'
+    - migration_102.php
+v1.0.3:
+    - 'add fields'
+    - migration_103.php

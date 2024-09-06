@@ -1,5 +1,162 @@
 url = "/account"
 layout = "default"
 title = "account"
-is_hidden = 1
+is_hidden = 0
+
+[location]
+
+[Timer]
+
+[GameStats]
 ==
+<div class="wrapper-account">
+<header class="header">
+  <div class="container">
+      <div class="header__inner">
+          <a class="header__back" href="/">Home</a>
+      </div>
+  </div>
+</header>
+
+<main class="main">
+    <div class="container">
+      <h3 class="account-title">Profile</h3>
+      <div class="profile">
+        <div class="profile__userpic">
+          {% ajaxPartial "account/userpic" %}
+          <h4 class="profile__name">{{ user.first_name }} {{ user.last_name }}</h4>
+        </div>
+        <div class="profile__inner">
+            <div class="profile__info">
+              <ul class="profile__info-list">
+                <li class="profile__info-item">
+                  <span>E-mail:</span>
+                  <p class="profile__info-count">{{ user.email }}</p>
+                </li>
+                <li class="profile__info-item">
+                  <span>Phone:</span>
+                  <p class="profile__info-count">{{ user.phone }}</p>
+                </li>
+                <li class="profile__info-item">
+                  <span>Country:</span>
+                  <p class="profile__info-count">
+   {{ user.country.name }} <span class="fi fi-{{ user.country.code|lower }}"></span>
+</p>
+                </li>
+              </ul>
+              <div class="profile__links">
+                <a class="profile__link" href="/gameclose">
+                  See last results
+                  <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.5L10 10.5L1 19.5" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a class="profile__link" href="/rules">
+                  Rules
+                  <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.5L10 10.5L1 19.5" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+              </div>
+            </div>
+          <div class="profile-accordeon">
+            <div class="profile-accordeon__list">
+              <div class="profile-accordeon__item">
+                <p class="profile-accordeon__item-text">My records</p>
+                <div class="profile-accordeon__item-content my-records">
+                  <div class="profile-accordeon__item-inner my-records__inner">
+                    <div class="my-records__item">
+                      <p class="my-records__text">Played in total</p>
+                      <span>{{ totalGames }}</span>
+                    </div>
+                    <div class="my-records__item">
+                      <p class="my-records__text">Won</p>
+                      <span>{{ wonGames }}</span>
+                    </div>
+                    <div class="my-records__item">
+                      <p class="my-records__text">Lost</p>
+                      <span>{{ lostGames }}</span>
+                    </div>
+                    <div class="my-records__item">
+                      <p class="my-records__text">Registered</p>
+                      <span>{{ user.created_at|date('d-m-Y') }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-accordeon__item">
+                <p class="profile-accordeon__item-text">Next game</p>
+                <div class="profile-accordeon__item-content next-game">
+                  <div class="profile-accordeon__item-inner next-game__inner">
+                    <div class="next-game__item">
+                      <p class="next-game__text" >Timer</p>
+                      <span id="nextGameTimer"></span>
+                    </div>
+                    <div class="next-game__item">
+                      <p class="next-game__text">Date</p>
+                      <span>{{ lastGame.created_at|date('d-m-Y')}}</span>
+                    </div>
+                    <div class="next-game__item">
+                      <p class="next-game__text">Time</p>
+                      <span>{{ lastGame.created_at|date("h:i A T")}}</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="profile__buttons">
+      <button class="profile__button"
+         type="button"
+         id='btn-edit'
+         >Edit profile</button>
+        <button class="profile__button" id="btn-save" style="display: none">Save</button>
+        <button class="profile__button"data-request='onLogout' data-request-data="{'redirect': '/'}">Log out</button>
+      </div>
+      
+    </div>
+  </main>
+{% partial "footer" %}
+</div>
+<script src="{{ 'assets/js/account.js' | theme}}"></script>
+<script>
+document.getElementById('avatarInput').addEventListener('change', function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('avatarPreview');
+        output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+});
+</script>
+<script>
+    // Получаем дату дедлайна из Twig
+    const deadline = new Date("{{ lastGame.created_at|date("Y-m-d H:i:s") }}").getTime();
+
+    // Обновление таймера каждую секунду
+    const timer = setInterval(function() {
+
+        // Текущее время
+        const now = new Date().getTime();
+
+        // Разница между дедлайном и текущим временем
+        const timeLeft = deadline - now;
+
+        // Расчёт времени
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Выводим результат в элемент с id="countdown"
+        document.getElementById("nextGameTimer").innerHTML = days + ":" + hours + ":"
+        + minutes + ":" + seconds;
+
+        // Если таймер достиг нуля, то
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            document.getElementById("nextGameTimer").innerHTML = "Game start!";
+        }
+    }, 1000);
+</script>

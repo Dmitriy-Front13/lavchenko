@@ -1,0 +1,35 @@
+1724082819a:1:{s:18:"game/game-cell.htm";a:5:{s:8:"fileName";s:18:"game/game-cell.htm";s:7:"content";s:759:"<div class="main-cells">
+             {% if isGameOver %}
+            <h2>Последняя завершенная игра</h2>
+        {% else %}
+            <h2>Текущая игра</h2>
+        {% endif %}
+            <div class="swiper-button-prev main-cells__btn btn-left">
+                <img src="{{'assets/images/btn-left.svg'| theme}}" alt="btn left">
+            </div>
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper swiper-wrapper2">
+                    
+                </div>
+            </div>
+            <div class="swiper-button-next main-cells__btn btn-right">
+                <img src="{{'assets/images/btn-right.svg'| theme}}" alt="btn right">
+            </div>
+        </div>";s:5:"mtime";i:1723996384;s:6:"markup";s:759:"<div class="main-cells">
+             {% if isGameOver %}
+            <h2>Последняя завершенная игра</h2>
+        {% else %}
+            <h2>Текущая игра</h2>
+        {% endif %}
+            <div class="swiper-button-prev main-cells__btn btn-left">
+                <img src="{{'assets/images/btn-left.svg'| theme}}" alt="btn left">
+            </div>
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper swiper-wrapper2">
+                    
+                </div>
+            </div>
+            <div class="swiper-button-next main-cells__btn btn-right">
+                <img src="{{'assets/images/btn-right.svg'| theme}}" alt="btn right">
+            </div>
+        </div>";s:4:"code";N;}}

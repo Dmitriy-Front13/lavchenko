@@ -27,7 +27,11 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
           return [
-            \Dmitry\Game\Components\GameComponent::class => 'gameComponent'
+            \Dmitry\Game\Components\GameComponent::class => 'gameComponent',
+            \Dmitry\Game\Components\Timer::class => 'Timer',
+            \Dmitry\Game\Components\GameStats::class => 'GameStats',
+            \Dmitry\Game\Components\GameInfo::class => 'GameInfo',
+            \Dmitry\Game\Components\GameWinner::class => 'GameWinner',
         ];
     }
 

@@ -1,0 +1,10 @@
+name: Banner
+form: $/dmitry/adsbanner/models/images/fields.yaml
+modelClass: Dmitry\AdsBanner\Models\Images
+defaultRedirect: dmitry/adsbanner/banner
+create:
+    redirect: 'dmitry/adsbanner/banner/update/:id'
+    redirectClose: dmitry/adsbanner/banner
+update:
+    redirect: dmitry/adsbanner/banner
+    redirectClose: dmitry/adsbanner/banner

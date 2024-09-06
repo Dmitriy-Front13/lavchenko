@@ -1,0 +1,29 @@
+1725372109a:1:{s:13:"game/cell.htm";a:5:{s:8:"fileName";s:13:"game/cell.htm";s:7:"content";s:366:"<button class="game-cell 
+{% if cell.isWinner %}
+special-class-653
+{% elseif cell.isChosen %}
+special-class-326
+{% endif %}" 
+data-request="onCheckNumber"
+data-slide-index="${currentSlideIndex}"
+data-request-update="{ _self: true}">
+{% if cell.isWinner %}
+<img src="{{ icon.getPath() }}" alt="Winner">
+{% else %}
+{{ cell.number }}
+{% endif %}
+</button>";s:5:"mtime";i:1725241717;s:6:"markup";s:366:"<button class="game-cell 
+{% if cell.isWinner %}
+special-class-653
+{% elseif cell.isChosen %}
+special-class-326
+{% endif %}" 
+data-request="onCheckNumber"
+data-slide-index="${currentSlideIndex}"
+data-request-update="{ _self: true}">
+{% if cell.isWinner %}
+<img src="{{ icon.getPath() }}" alt="Winner">
+{% else %}
+{{ cell.number }}
+{% endif %}
+</button>";s:4:"code";N;}}

@@ -1,0 +1,1 @@
+1724558156a:1:{s:6:"states";a:4:{s:5:"label";s:5:"State";s:4:"list";s:44:"$/rainlab/location/models/state/columns.yaml";s:4:"form";s:43:"$/rainlab/location/models/state/fields.yaml";s:4:"view";a:3:{s:10:"showSearch";b:1;s:14:"toolbarPartial";s:65:"$/rainlab/location/controllers/locations/_states_list_toolbar.htm";s:6:"filter";s:43:"$/rainlab/location/models/state/scopes.yaml";}}}

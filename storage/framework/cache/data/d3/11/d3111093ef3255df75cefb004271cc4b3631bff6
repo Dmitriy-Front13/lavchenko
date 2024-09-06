@@ -1,0 +1,34 @@
+1723321274a:1:{s:10:"verify.htm";a:9:{s:8:"fileName";s:10:"verify.htm";s:7:"content";s:467:"title = "verify"
+layout = "default"
+url = "/verify"
+is_hidden = 1
+==
+{% partial "header" %}
+
+{% partial "modal-confEmail" %}
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+Fancybox.show([{ src: '#modal-confEmail',
+             type: 'inline',
+             closeButton: false,
+            dragToClose: false,
+            closeExisting: true
+
+              }]);
+              </script>";s:5:"mtime";i:1722950326;s:6:"markup";s:393:"{% partial "header" %}
+
+{% partial "modal-confEmail" %}
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+Fancybox.show([{ src: '#modal-confEmail',
+             type: 'inline',
+             closeButton: false,
+            dragToClose: false,
+            closeExisting: true
+
+              }]);
+              </script>";s:4:"code";N;s:5:"title";s:6:"verify";s:6:"layout";s:7:"default";s:3:"url";s:7:"/verify";s:9:"is_hidden";s:1:"1";}}

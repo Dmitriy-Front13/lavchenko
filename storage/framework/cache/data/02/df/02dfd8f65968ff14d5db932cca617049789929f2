@@ -1,0 +1,1 @@
+1724973892a:1:{s:6:"scopes";a:2:{s:10:"created_at";a:3:{s:5:"label";s:11:"Date & Time";s:4:"type";s:9:"daterange";s:10:"conditions";s:50:"created_at >= ':after' AND created_at <= ':before'";}s:4:"user";a:4:{s:5:"label";s:5:"Login";s:10:"modelClass";s:19:"Backend\Models\User";s:10:"conditions";s:22:"user_id in (:filtered)";s:8:"nameFrom";s:5:"login";}}}

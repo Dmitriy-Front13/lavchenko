@@ -1,0 +1,6 @@
+plugin:
+    name: 'dmitry.usercustom::lang.plugin.name'
+    description: 'Custom logic user'
+    author: Dmitry
+    icon: oc-icon-user-plus
+    homepage: ''

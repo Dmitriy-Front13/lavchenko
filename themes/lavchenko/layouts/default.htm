@@ -6,13 +6,6 @@ security = "all"
 checkToken = 0
 
 [registration]
-
-[authentication]
-rememberMe = "ask"
-twoFactorAuth = 0
-recoverPassword = 0
-
-[resetPassword]
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -25,14 +18,21 @@ recoverPassword = 0
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    {% styles %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ 'assets/css/style.css'| theme }}">
     <title>MI77ON</title>
 </head>
 <body>
-{% page %}
 <!-- Scripts -->
+{% framework %}
   {% framework extras %}
   {% scripts %}
+{% page %}
+
 
 </body>
 </html>

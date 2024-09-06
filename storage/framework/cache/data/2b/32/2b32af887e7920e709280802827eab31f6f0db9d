@@ -1,7 +1,13 @@
-1722860645a:1:{s:14:"modal-mail.htm";a:5:{s:8:"fileName";s:14:"modal-mail.htm";s:7:"content";s:122:"<div class="modal-home" id="modal-mail">
-        <p>Check your mail</p>
-        <a href="/">to Home Page</a>
-    </div>";s:5:"mtime";i:1722624828;s:6:"markup";s:122:"<div class="modal-home" id="modal-mail">
-        <p>Check your mail</p>
-        <a href="/">to Home Page</a>
-    </div>";s:4:"code";N;}}
+1725725983a:1:{s:14:"modal-mail.htm";a:5:{s:8:"fileName";s:14:"modal-mail.htm";s:7:"content";s:390:"<div class="modal-confEmail" id="modal-mail">
+<button class="closeModal-btn"></button>
+<p>We have sent confirmation messege on youre e-mail address. Check your mail and confirm your E-mail address</p>
+        <a href="{{ this.session.get('emailLink') }}" target="_blank">
+            <img src="{{ 'assets/images/modalEmail.svg' | theme }}" alt="img email">
+        </a>
+        </div>";s:5:"mtime";i:1725639554;s:6:"markup";s:390:"<div class="modal-confEmail" id="modal-mail">
+<button class="closeModal-btn"></button>
+<p>We have sent confirmation messege on youre e-mail address. Check your mail and confirm your E-mail address</p>
+        <a href="{{ this.session.get('emailLink') }}" target="_blank">
+            <img src="{{ 'assets/images/modalEmail.svg' | theme }}" alt="img email">
+        </a>
+        </div>";s:4:"code";N;}}

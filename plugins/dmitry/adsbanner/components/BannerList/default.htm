@@ -1,0 +1,10 @@
+{% for photo in photos %}
+    <div class="swiper-slide">
+        <!-- <img src="{{ photo.ads.getPath() }}" alt="ads-banner">
+        {% if photo.link is not empty %} -->
+            <a href="{{ photo.link }}">Перейти по ссылке</a>
+       <!--  {% else %}
+           <p>Ссылка отсутствует</p>
+       {% endif %} -->
+    </div>
+{% endfor %}

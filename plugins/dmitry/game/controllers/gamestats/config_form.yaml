@@ -1,0 +1,10 @@
+name: GameStats
+form: $/dmitry/game/models/gamenumber/fields.yaml
+modelClass: Dmitry\Game\Models\GameNumber
+defaultRedirect: dmitry/game/gamestats
+create:
+    redirect: 'dmitry/game/gamestats/update/:id'
+    redirectClose: dmitry/game/gamestats
+update:
+    redirect: dmitry/game/gamestats
+    redirectClose: dmitry/game/gamestats

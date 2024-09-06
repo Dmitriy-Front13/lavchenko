@@ -3,7 +3,6 @@
 use Cms;
 use Auth;
 use Flash;
-use Event;
 use RainLab\User\Models\User;
 use RainLab\User\Models\UserLog;
 use RainLab\User\Models\UserPreference;
@@ -60,10 +59,6 @@ class Account extends ComponentBase
      */
     public function onRun()
     {
-
-        Event::listen('rainlab.user.register', function($component, $user) {
-            $component->actionVerifyEmail();
-        });
         if ($redirect = $this->checkVerifyEmailRedirect()) {
             return $redirect;
         }
@@ -134,7 +129,7 @@ class Account extends ComponentBase
          *
          * Example usage:
          *
-         *      ent::listen('rainlab.user.update', function ($component, $user, $input) {
+         *     Event::listen('rainlab.user.update', function ($component, $user, $input) {
          *         // ...
          *     });
          *

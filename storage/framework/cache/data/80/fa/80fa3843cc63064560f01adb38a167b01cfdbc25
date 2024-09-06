@@ -1,0 +1,38 @@
+1725397479a:1:{s:23:"modals/alert-dialog.htm";a:5:{s:8:"fileName";s:23:"modals/alert-dialog.htm";s:7:"content";s:755:"<script type="text/template" data-control="alert-dialog">
+    <div class="modal" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="modal-title lead" data-message></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-cancel>
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" data-ok>
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+";s:5:"mtime";i:1714945456;s:6:"markup";s:754:"<script type="text/template" data-control="alert-dialog">
+    <div class="modal" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="modal-title lead" data-message></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-cancel>
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" data-ok>
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>";s:4:"code";N;}}

@@ -11,7 +11,16 @@ permissions:
 navigation:
     main-menu-item:
         label: Игра
-        url: dmitry/game/gamescontroller
+        url: /
         icon: icon-gamepad
         permissions:
             - acme.game.access_games
+        sideMenu:
+            game-stats:
+                label: Stats
+                url: dmitry/game/gamestats
+                icon: icon-list
+            create-game:
+                label: 'Create game'
+                url: dmitry/game/gamescontroller
+                icon: icon-gamepad

@@ -13,6 +13,7 @@ class BuilderTableCreateDmitryGameNumber extends Migration
             $table->integer('game_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('number');
+            $table->integer('attempts')->default(0);
             
             $table->foreign('game_id')->references('id')->on('dmitry_game_')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

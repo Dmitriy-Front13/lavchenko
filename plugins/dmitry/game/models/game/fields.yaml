@@ -16,8 +16,25 @@ fields:
         label: 'Is active'
         span: auto
         type: checkbox
+    cash:
+        label: 'Сумма выиграша'
+        span: auto
+        placeholder: '100'
+        required: 1
+        type: text
+    icon:
+        label: Иконка
+        mode: file
+        fileTypes: svg
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
     created_at:
         label: 'Created at'
+        mode: datetime
         span: auto
         type: datepicker
     updated_at:

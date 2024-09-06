@@ -1,0 +1,1 @@
+1723420576a:1:{s:7:"columns";a:2:{s:4:"name";a:2:{s:5:"label";s:49:"gromit.forms::lang.models.form.columns.name.label";s:10:"searchable";b:1;}s:9:"is_active";a:3:{s:5:"label";s:54:"gromit.forms::lang.models.form.columns.is_active.label";s:4:"type";s:7:"partial";s:4:"path";s:42:"$/gromit/forms/partials/_active_column.htm";}}}

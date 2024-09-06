@@ -1,0 +1,1 @@
+1724324443a:1:{s:6:"fields";a:3:{s:9:"client_id";a:2:{s:4:"span";s:4:"left";s:5:"label";s:9:"Client ID";}s:13:"client_secret";a:2:{s:4:"span";s:5:"right";s:5:"label";s:13:"Client Secret";}s:5:"cache";a:2:{s:4:"span";s:4:"left";s:5:"label";s:18:"Cache (in minutes)";}}}

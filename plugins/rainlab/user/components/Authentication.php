@@ -4,7 +4,6 @@ use Cms;
 use Flash;
 use Config;
 use Request;
-use Redirect;
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\UserLog;
 use RainLab\User\Models\Setting;
@@ -80,8 +79,6 @@ class Authentication extends ComponentBase
         elseif ($response = $this->actionLogin()) {
             return $response;
         }
-
-        return Redirect::to('/');
 
         if ($redirect = Cms::redirectIntendedFromPost()) {
             return $redirect;

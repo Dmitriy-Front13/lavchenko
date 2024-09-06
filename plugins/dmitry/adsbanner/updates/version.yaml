@@ -1,0 +1,11 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table dmitry_adsbanner_images'
+    - builder_table_create_dmitry_adsbanner_images.php
+v1.0.3:
+    - 'Updated table dmitry_adsbanner_images'
+    - builder_table_update_dmitry_adsbanner_images.php
+v1.0.4:
+    - 'Updated table dmitry_adsbanner_images'
+    - builder_table_update_dmitry_adsbanner_images_2.php

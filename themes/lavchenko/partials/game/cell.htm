@@ -1,0 +1,15 @@
+<button class="game-cell 
+{% if cell.isWinner %}
+special-class-653
+{% elseif cell.isChosen %}
+special-class-326
+{% endif %}" 
+data-request="onCheckNumber"
+data-slide-index="${currentSlideIndex}"
+data-request-update="{ _self: true}">
+{% if cell.isWinner %}
+<img src="{{ icon.getPath() }}" alt="Winner">
+{% else %}
+{{ cell.number }}
+{% endif %}
+</button>
